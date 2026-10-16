@@ -1,0 +1,36 @@
+# Environments
+.env
+.venv
+venv/
+
+# Data
+data/
+
+# opencode
+AGENTS.md
+opencode.jsonc
+
+# Python
+__pycache__/
+*.pyc
+
+# Models
+checkpoints/
+*.pt
+*.pth
+saved_models/
+*.pt
+*.pth
+
+# Logs
+logs/
+wandb/
+
+# Jupyter
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+
+# vscode
+.vscode/
