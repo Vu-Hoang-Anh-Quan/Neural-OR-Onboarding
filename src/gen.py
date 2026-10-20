@@ -10,3 +10,13 @@ def gen_cvrp(n=100, capacity=50, seed=0, path=None):
         "EDGE_WEIGHT_TYPE": "EUC_2D", "NODE_COORD_SECTION": xy,
         "DEMAND_SECTION": demand, "DEPOT_SECTION": np.array([1, -1])})
     return path
+
+def gen_tsp(n=100, seed=0, path=None):
+    rng = np.random.default_rng(seed)
+    dist = rng.integers(1, 101, size=(n, n))
+    np.fill_diagonal(dist, 0)
+    path = path or f"tsp-n{n}-s{seed}.txt"
+    with open(path, "w") as f:
+        f.write(f"{n}\n")
+        np.savetxt(f, dist, fmt="%d")
+    return path
