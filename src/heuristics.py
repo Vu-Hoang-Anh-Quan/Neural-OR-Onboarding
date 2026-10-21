@@ -28,19 +28,23 @@ def two_opt(tour, D):
     c=tour[k], d=tour[(k+1)%n]. Repeats until no delta < -1e-9 remains.
     Mutates and returns tour."""
     n = len(tour)
+    print(tour[0])
+    # print(D)
     improved = True
     while improved:
         improved = False
-        for i in range(n - 1):
-            a = tour[i - 1]
-            b = tour[i]
-            for k in range(i + 1, n):
+        for i in range(n - 2):
+            a = tour[i]
+            b = tour[i+1]
+            for k in range(i + 2, n):
                 c = tour[k]
                 d = tour[(k + 1) % n]
                 if D[a, c] + D[b, d] - D[a, b] - D[c, d] < -1e-9:
-                    tour[i:k + 1] = tour[i:k + 1][::-1]
+                    # print(f"{n} {i} {k}")
+                    tour[i+1:k + 1] = tour[i+1:k + 1][::-1]
                     improved = True
                     break
+                assert not improved
             if improved:
                 break
         if not improved:

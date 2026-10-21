@@ -80,10 +80,12 @@ def run_heuristics(D):
     t0 = time.perf_counter()
     tour = nearest_neighbor(D, start=0)
     nn_cost = tour_length(tour, D)
+    print("NN finished")
     t1 = time.perf_counter()
 
     tour = two_opt(tour, D)
     two_opt_cost = tour_length(tour, D)
+    print("NN+2opt finished")
     t2 = time.perf_counter()
 
     # Alternate 2-opt + Or-opt until no improvement.
@@ -94,7 +96,9 @@ def run_heuristics(D):
         after = tour_length(tour, D)
         if after >= before - 1e-9:
             break
+        print("Loop 2opt&oropt another round")
     or_opt_cost = tour_length(tour, D)
+    print("NN+2opt+oropt finished")
     t3 = time.perf_counter()
 
     return nn_cost, two_opt_cost, or_opt_cost, (t1 - t0, t2 - t1, t3 - t2)
@@ -194,6 +198,7 @@ def run_all():
             D = euclidean_D(xy)
             coords = scaled_coords(xy)
 
+            print(f"N={n}, instance: inst")
             nn_c, opt_c, oro_c, (t_nn, t_opt, t_oro) = run_heuristics(D)
 
             tsp_path = os.path.join(workdir, f"tsp-n{n}-i{inst}.tsp")
