@@ -2,7 +2,7 @@ import numpy as np
 from ortools.linear_solver import pywraplp
 
 def solve_tsp_mtz(D, time_limit_s=60):
-    n = len(D)
+    n = len(D) # [n, n]
     s = pywraplp.Solver.CreateSolver("SCIP")
     x = {(i, j): s.BoolVar(f"x_{i}_{j}") for i in range(n) for j in range(n) if i != j}
     u = {i: s.NumVar(1, n - 1, f"u_{i}") for i in range(1, n)}
