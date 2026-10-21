@@ -84,6 +84,8 @@ def or_opt(tour, D):
                     break
             if improved:
                 break
+        if not improved:
+            break
     return tour
 
 
