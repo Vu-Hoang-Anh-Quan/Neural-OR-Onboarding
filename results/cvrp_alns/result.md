@@ -19,5 +19,5 @@ Environment: Python 3.11.17, NumPy 2.4.6.
 | X-n502-k39 | 69226 | 72653.3 ± 276.8 | 4.95 |
 
 ## Hardware specification
-CPU: Ryzen 9 7900 X
+CPU: Ryzen 7 9700 X
 GPU: Not used
