@@ -1,6 +1,6 @@
 import sys, time
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
-from cvrp_utils import load, cost, check
+from cvrp.cvrp_utils import load, cost, check
 
 path, sec = sys.argv[1], int(sys.argv[2])
 inst = load(path); D, dem, Q = inst["D"], inst["demand"], inst["Q"]
