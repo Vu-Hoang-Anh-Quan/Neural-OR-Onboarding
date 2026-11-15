@@ -1,0 +1,697 @@
+15:34 | tsp_heatmap.orchestrator | run started | 2026-11-07T15:34:10 | device=cpu | Python 3.11.17, torch 2.15.0+cpu, PyG 2.8.1, NumPy 2.4.6
+15:34 | tsp_heatmap.orchestrator | cfg n             = 20
+15:34 | tsp_heatmap.orchestrator | cfg k             = 8
+15:34 | tsp_heatmap.orchestrator | cfg train_n       = 20
+15:34 | tsp_heatmap.orchestrator | cfg val_n         = 5
+15:34 | tsp_heatmap.orchestrator | cfg test_n        = 5
+15:34 | tsp_heatmap.orchestrator | cfg hidden        = 64
+15:34 | tsp_heatmap.orchestrator | cfg dropout       = 0.1
+15:34 | tsp_heatmap.orchestrator | cfg epochs        = 2
+15:34 | tsp_heatmap.orchestrator | cfg batch_size    = 64
+15:34 | tsp_heatmap.orchestrator | cfg lr            = 0.001
+15:34 | tsp_heatmap.orchestrator | cfg weight_decay  = 0.0
+15:34 | tsp_heatmap.orchestrator | cfg seed          = 42
+15:34 | tsp_heatmap.orchestrator | cfg topk          = 20
+15:34 | tsp_heatmap.orchestrator | cfg device        = cpu
+19:56 | tsp_heatmap.orchestrator | run started | 2026-11-07T19:56:31 | device=cpu | Python 3.11.17, torch 2.15.0+cpu, PyG 2.8.1, NumPy 2.4.6
+19:56 | tsp_heatmap.orchestrator | cfg n             = 20
+19:56 | tsp_heatmap.orchestrator | cfg k             = 8
+19:56 | tsp_heatmap.orchestrator | cfg train_n       = 20
+19:56 | tsp_heatmap.orchestrator | cfg val_n         = 5
+19:56 | tsp_heatmap.orchestrator | cfg test_n        = 5
+19:56 | tsp_heatmap.orchestrator | cfg hidden        = 64
+19:56 | tsp_heatmap.orchestrator | cfg dropout       = 0.1
+19:56 | tsp_heatmap.orchestrator | cfg epochs        = 2
+19:56 | tsp_heatmap.orchestrator | cfg batch_size    = 64
+19:56 | tsp_heatmap.orchestrator | cfg lr            = 0.001
+19:56 | tsp_heatmap.orchestrator | cfg weight_decay  = 0.0
+19:56 | tsp_heatmap.orchestrator | cfg seed          = 42
+19:56 | tsp_heatmap.orchestrator | cfg topk          = 20
+19:56 | tsp_heatmap.orchestrator | cfg device        = cpu
+19:56 | tsp_heatmap.dataset | split train: 20 instances (seeds 0..19), LKH kNN(8) coverage mean 1.0000
+19:56 | tsp_heatmap.dataset | split val  : 5 instances (seeds 20..24), LKH kNN(8) coverage mean 0.9900
+19:56 | tsp_heatmap.dataset | split test : 5 instances (seeds 25..29), LKH kNN(8) coverage mean 1.0000
+19:56 | tsp_heatmap.dataset | dataset: n=20 k=8 | train/val/test = 20/5/5 | 160 candidate edges/instance | LKH: 28 run (avg 0.017 s, 0.5 s total), 2 reused | build 0.5 s
+19:56 | tsp_heatmap.orchestrator | dataset ready in 0.5 s
+19:56 | tsp_heatmap.train | epoch   1 | train loss 0.7071 | val F1 0.0000
+19:56 | tsp_heatmap.train | epoch   2 | train loss 0.6765 | val F1 0.0000
+19:56 | tsp_heatmap.train | training done: 2 epochs in 0.0 s | best val F1 0.0000 @ epoch 1
+19:56 | tsp_heatmap.train | checkpoint: /home/Quan/Desktop/Neural-OR-Onboarding/src/tsp_heatmap/checkpoints/tsp_heatmap.pt
+19:56 | tsp_heatmap.orchestrator | loaded checkpoint: epoch 1, val F1 0.0000 (config seed=42)
+19:56 | tsp_heatmap.orchestrator | test: n=20 | precision@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+19:56 | tsp_heatmap.orchestrator | test: recall@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+19:56 | tsp_heatmap.orchestrator | test: F1@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+19:56 | tsp_heatmap.orchestrator | test: precision top-20: avg 0.1300 ± 0.0510 | Q1 0.1000 | median 0.1500 | Q3 0.1500
+19:56 | tsp_heatmap.orchestrator | test: recall top-20: avg 0.1300 ± 0.0510 | Q1 0.1000 | median 0.1500 | Q3 0.1500
+19:56 | tsp_heatmap.orchestrator | test: k-NN coverage: avg 1.0000 ± 0.0000 | Q1 1.0000 | median 1.0000 | Q3 1.0000
+19:56 | tsp_heatmap.orchestrator | test inference: 0.0 s for 5 instances (avg 0.0004 s/instance)
+19:56 | tsp_heatmap.orchestrator | total wall: 0.6 s
+19:56 | tsp_heatmap.orchestrator | results written to /home/Quan/Desktop/Neural-OR-Onboarding/results/tsp_heatmap/results.md
+21:01 | tsp_heatmap.orchestrator | run started | 2026-11-07T21:01:26 | device=cpu | Python 3.11.17, torch 2.15.0+cpu, PyG 2.8.1, NumPy 2.4.6
+21:01 | tsp_heatmap.orchestrator | cfg n             = 20
+21:01 | tsp_heatmap.orchestrator | cfg k             = 8
+21:01 | tsp_heatmap.orchestrator | cfg train_n       = 20
+21:01 | tsp_heatmap.orchestrator | cfg val_n         = 5
+21:01 | tsp_heatmap.orchestrator | cfg test_n        = 5
+21:01 | tsp_heatmap.orchestrator | cfg hidden        = 64
+21:01 | tsp_heatmap.orchestrator | cfg dropout       = 0.1
+21:01 | tsp_heatmap.orchestrator | cfg epochs        = 2
+21:01 | tsp_heatmap.orchestrator | cfg batch_size    = 64
+21:01 | tsp_heatmap.orchestrator | cfg lr            = 0.001
+21:01 | tsp_heatmap.orchestrator | cfg weight_decay  = 0.0
+21:01 | tsp_heatmap.orchestrator | cfg seed          = 42
+21:01 | tsp_heatmap.orchestrator | cfg topk          = 20
+21:01 | tsp_heatmap.orchestrator | cfg device        = cpu
+21:01 | tsp_heatmap.dataset | split train: 20 instances (seeds 0..19), LKH kNN(8) coverage mean 1.0000
+21:01 | tsp_heatmap.dataset | split val  : 5 instances (seeds 20..24), LKH kNN(8) coverage mean 0.9900
+21:01 | tsp_heatmap.dataset | split test : 5 instances (seeds 25..29), LKH kNN(8) coverage mean 1.0000
+21:01 | tsp_heatmap.dataset | dataset: n=20 k=8 | train/val/test = 20/5/5 | 160 candidate edges/instance | LKH: 0 run (avg 0.000 s, 0.0 s total), 30 reused | build 0.0 s
+21:01 | tsp_heatmap.orchestrator | dataset ready in 0.0 s
+21:01 | tsp_heatmap.train | epoch   1 | train loss 0.7071 | val F1 0.0000
+21:01 | tsp_heatmap.train | epoch   2 | train loss 0.6765 | val F1 0.0000
+21:01 | tsp_heatmap.train | training done: 2 epochs in 0.0 s | best val F1 0.0000 @ epoch 1
+21:01 | tsp_heatmap.train | checkpoint: /home/Quan/Desktop/Neural-OR-Onboarding/src/tsp_heatmap/checkpoints/tsp_heatmap.pt
+21:01 | tsp_heatmap.orchestrator | loaded checkpoint: epoch 1, val F1 0.0000 (config seed=42)
+21:01 | tsp_heatmap.orchestrator | test: n=20 | precision@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:01 | tsp_heatmap.orchestrator | test: recall@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:01 | tsp_heatmap.orchestrator | test: F1@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:01 | tsp_heatmap.orchestrator | test: precision top-20: avg 0.1300 ± 0.0510 | Q1 0.1000 | median 0.1500 | Q3 0.1500
+21:01 | tsp_heatmap.orchestrator | test: recall top-20: avg 0.1300 ± 0.0510 | Q1 0.1000 | median 0.1500 | Q3 0.1500
+21:01 | tsp_heatmap.orchestrator | test: k-NN coverage: avg 1.0000 ± 0.0000 | Q1 1.0000 | median 1.0000 | Q3 1.0000
+21:01 | tsp_heatmap.orchestrator | test inference: 0.0 s for 5 instances (avg 0.0003 s/instance)
+21:01 | tsp_heatmap.orchestrator | total wall: 0.1 s
+21:01 | tsp_heatmap.orchestrator | results written to /home/Quan/Desktop/Neural-OR-Onboarding/results/tsp_heatmap/results.md
+21:47 | tsp_heatmap.orchestrator | run started | 2026-11-07T21:47:50 | device=cpu | Python 3.11.17, torch 2.15.0+cpu, PyG 2.8.1, NumPy 2.4.6
+21:47 | tsp_heatmap.orchestrator | cfg n             = 20
+21:47 | tsp_heatmap.orchestrator | cfg k             = 8
+21:47 | tsp_heatmap.orchestrator | cfg train_n       = 1000
+21:47 | tsp_heatmap.orchestrator | cfg val_n         = 1000
+21:47 | tsp_heatmap.orchestrator | cfg test_n        = 1000
+21:47 | tsp_heatmap.orchestrator | cfg hidden        = 64
+21:47 | tsp_heatmap.orchestrator | cfg dropout       = 0.1
+21:47 | tsp_heatmap.orchestrator | cfg epochs        = 50
+21:47 | tsp_heatmap.orchestrator | cfg batch_size    = 64
+21:47 | tsp_heatmap.orchestrator | cfg lr            = 0.001
+21:47 | tsp_heatmap.orchestrator | cfg weight_decay  = 0.0
+21:47 | tsp_heatmap.orchestrator | cfg seed          = 42
+21:47 | tsp_heatmap.orchestrator | cfg topk          = 20
+21:47 | tsp_heatmap.orchestrator | cfg device        = cpu
+21:48 | tsp_heatmap.dataset | split train: 1000 instances (seeds 0..999), LKH kNN(8) coverage mean 0.9986
+21:48 | tsp_heatmap.dataset | split val  : 1000 instances (seeds 1000..1999), LKH kNN(8) coverage mean 0.9983
+21:48 | tsp_heatmap.dataset | split test : 1000 instances (seeds 2000..2999), LKH kNN(8) coverage mean 0.9984
+21:48 | tsp_heatmap.dataset | dataset: n=20 k=8 | train/val/test = 1000/1000/1000 | 160 candidate edges/instance | LKH: 2980 run (avg 0.016 s, 46.7 s total), 20 reused | build 50.7 s
+21:48 | tsp_heatmap.orchestrator | dataset ready in 50.7 s
+21:48 | tsp_heatmap.train | epoch   1 | train loss 0.5146 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   2 | train loss 0.3853 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   3 | train loss 0.3767 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   4 | train loss 0.3749 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   5 | train loss 0.3745 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   6 | train loss 0.3743 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   7 | train loss 0.3742 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   8 | train loss 0.3740 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch   9 | train loss 0.3739 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  10 | train loss 0.3738 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  11 | train loss 0.3737 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  12 | train loss 0.3735 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  13 | train loss 0.3734 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  14 | train loss 0.3733 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  15 | train loss 0.3732 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  16 | train loss 0.3731 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  17 | train loss 0.3730 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  18 | train loss 0.3729 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  19 | train loss 0.3728 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  20 | train loss 0.3727 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  21 | train loss 0.3727 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  22 | train loss 0.3727 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  23 | train loss 0.3726 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  24 | train loss 0.3726 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  25 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  26 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  27 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  28 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  29 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  30 | train loss 0.3725 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  31 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  32 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  33 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  34 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  35 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  36 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  37 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  38 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  39 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  40 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  41 | train loss 0.3724 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  42 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  43 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  44 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  45 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  46 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  47 | train loss 0.3723 | val F1 0.0000
+21:48 | tsp_heatmap.train | epoch  48 | train loss 0.3722 | val F1 0.0000
+21:49 | tsp_heatmap.train | epoch  49 | train loss 0.3723 | val F1 0.0000
+21:49 | tsp_heatmap.train | epoch  50 | train loss 0.3723 | val F1 0.0000
+21:49 | tsp_heatmap.train | training done: 50 epochs in 19.4 s | best val F1 0.0000 @ epoch 1
+21:49 | tsp_heatmap.train | checkpoint: /home/Quan/Desktop/Neural-OR-Onboarding/src/tsp_heatmap/checkpoints/tsp_heatmap.pt
+21:49 | tsp_heatmap.orchestrator | loaded checkpoint: epoch 1, val F1 0.0000 (config seed=42)
+21:49 | tsp_heatmap.orchestrator | test: n=20 | precision@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:49 | tsp_heatmap.orchestrator | test: recall@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:49 | tsp_heatmap.orchestrator | test: F1@0.5: avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+21:49 | tsp_heatmap.orchestrator | test: precision top-20: avg 0.1726 ± 0.0518 | Q1 0.1500 | median 0.1500 | Q3 0.2000
+21:49 | tsp_heatmap.orchestrator | test: recall top-20: avg 0.1729 ± 0.0518 | Q1 0.1500 | median 0.1500 | Q3 0.2000
+21:49 | tsp_heatmap.orchestrator | test: k-NN coverage: avg 0.9984 ± 0.0088 | Q1 1.0000 | median 1.0000 | Q3 1.0000
+21:49 | tsp_heatmap.orchestrator | test inference: 0.3 s for 1000 instances (avg 0.0003 s/instance)
+21:49 | tsp_heatmap.orchestrator | total wall: 70.4 s
+21:49 | tsp_heatmap.orchestrator | results written to /home/Quan/Desktop/Neural-OR-Onboarding/results/tsp_heatmap/results.md
+22:48 | tsp_heatmap.orchestrator | run started | 2026-11-07T22:48:23 | device=cpu | Python 3.11.17, torch 2.15.0+cpu, PyG 2.8.1, NumPy 2.4.6
+22:48 | tsp_heatmap.orchestrator | cfg n             = 20
+22:48 | tsp_heatmap.orchestrator | cfg k             = 8
+22:48 | tsp_heatmap.orchestrator | cfg train_n       = 1000
+22:48 | tsp_heatmap.orchestrator | cfg val_n         = 1000
+22:48 | tsp_heatmap.orchestrator | cfg test_n        = 1000
+22:48 | tsp_heatmap.orchestrator | cfg hidden        = 64
+22:48 | tsp_heatmap.orchestrator | cfg dropout       = 0.1
+22:48 | tsp_heatmap.orchestrator | cfg epochs        = 500
+22:48 | tsp_heatmap.orchestrator | cfg batch_size    = 64
+22:48 | tsp_heatmap.orchestrator | cfg lr            = 0.001
+22:48 | tsp_heatmap.orchestrator | cfg weight_decay  = 0.0
+22:48 | tsp_heatmap.orchestrator | cfg seed          = 42
+22:48 | tsp_heatmap.orchestrator | cfg topk          = 20
+22:48 | tsp_heatmap.orchestrator | cfg device        = cpu
+22:48 | tsp_heatmap.dataset | split train: 1000 instances (seeds 0..999), LKH kNN(8) coverage mean 0.9986
+22:48 | tsp_heatmap.dataset | split val  : 1000 instances (seeds 1000..1999), LKH kNN(8) coverage mean 0.9983
+22:48 | tsp_heatmap.dataset | split test : 1000 instances (seeds 2000..2999), LKH kNN(8) coverage mean 0.9984
+22:48 | tsp_heatmap.dataset | dataset: n=20 k=8 | train/val/test = 1000/1000/1000 | 160 candidate edges/instance | LKH: 0 run (avg 0.000 s, 0.0 s total), 3000 reused | build 2.0 s
+22:48 | tsp_heatmap.orchestrator | dataset ready in 2.0 s
+22:48 | tsp_heatmap.train | epoch   1 | train loss 0.5146 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   2 | train loss 0.3853 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   3 | train loss 0.3767 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   4 | train loss 0.3749 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   5 | train loss 0.3745 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   6 | train loss 0.3743 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   7 | train loss 0.3742 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   8 | train loss 0.3740 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch   9 | train loss 0.3739 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  10 | train loss 0.3738 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  11 | train loss 0.3737 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  12 | train loss 0.3735 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  13 | train loss 0.3734 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  14 | train loss 0.3733 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  15 | train loss 0.3732 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  16 | train loss 0.3731 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  17 | train loss 0.3730 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  18 | train loss 0.3729 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  19 | train loss 0.3728 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  20 | train loss 0.3727 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  21 | train loss 0.3727 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  22 | train loss 0.3727 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  23 | train loss 0.3726 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  24 | train loss 0.3726 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  25 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  26 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  27 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  28 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  29 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  30 | train loss 0.3725 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  31 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  32 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  33 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  34 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  35 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  36 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  37 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  38 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  39 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  40 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  41 | train loss 0.3724 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  42 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  43 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  44 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  45 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  46 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  47 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  48 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  49 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  50 | train loss 0.3723 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  51 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  52 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  53 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  54 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  55 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  56 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  57 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  58 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  59 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  60 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  61 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  62 | train loss 0.3722 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  63 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  64 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  65 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  66 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  67 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  68 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  69 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  70 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  71 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  72 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  73 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  74 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  75 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  76 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  77 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  78 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  79 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  80 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  81 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  82 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  83 | train loss 0.3721 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  84 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  85 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  86 | train loss 0.3720 | val F1 0.0000
+22:48 | tsp_heatmap.train | epoch  87 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  88 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  89 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  90 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  91 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  92 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  93 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  94 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  95 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  96 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  97 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  98 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch  99 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 100 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 101 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 102 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 103 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 104 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 105 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 106 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 107 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 108 | train loss 0.3720 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 109 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 110 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 111 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 112 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 113 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 114 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 115 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 116 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 117 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 118 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 119 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 120 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 121 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 122 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 123 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 124 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 125 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 126 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 127 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 128 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 129 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 130 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 131 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 132 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 133 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 134 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 135 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 136 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 137 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 138 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 139 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 140 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 141 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 142 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 143 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 144 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 145 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 146 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 147 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 148 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 149 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 150 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 151 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 152 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 153 | train loss 0.3719 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 154 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 155 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 156 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 157 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 158 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 159 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 160 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 161 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 162 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 163 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 164 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 165 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 166 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 167 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 168 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 169 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 170 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 171 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 172 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 173 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 174 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 175 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 176 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 177 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 178 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 179 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 180 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 181 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 182 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 183 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 184 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 185 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 186 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 187 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 188 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 189 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 190 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 191 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 192 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 193 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 194 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 195 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 196 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 197 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 198 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 199 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 200 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 201 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 202 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 203 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 204 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 205 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 206 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 207 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 208 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 209 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 210 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 211 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 212 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 213 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 214 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 215 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 216 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 217 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 218 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 219 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 220 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 221 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 222 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 223 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 224 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 225 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 226 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 227 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 228 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 229 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 230 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 231 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 232 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 233 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 234 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 235 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 236 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 237 | train loss 0.3716 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 238 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 239 | train loss 0.3718 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 240 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 241 | train loss 0.3717 | val F1 0.0000
+22:49 | tsp_heatmap.train | epoch 242 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 243 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 244 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 245 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 246 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 247 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 248 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 249 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 250 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 251 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 252 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 253 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 254 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 255 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 256 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 257 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 258 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 259 | train loss 0.3716 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 260 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 261 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 262 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 263 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 264 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 265 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 266 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 267 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 268 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 269 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 270 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 271 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 272 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 273 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 274 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 275 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 276 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 277 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 278 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 279 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 280 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 281 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 282 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 283 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 284 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 285 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 286 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 287 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 288 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 289 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 290 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 291 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 292 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 293 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 294 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 295 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 296 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 297 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 298 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 299 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 300 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 301 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 302 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 303 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 304 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 305 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 306 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 307 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 308 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 309 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 310 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 311 | train loss 0.3714 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 312 | train loss 0.3715 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 313 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 314 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 315 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 316 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 317 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 318 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 319 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 320 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 321 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 322 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 323 | train loss 0.3714 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 324 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 325 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 326 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 327 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 328 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 329 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 330 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 331 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 332 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 333 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 334 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 335 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 336 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 337 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 338 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 339 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 340 | train loss 0.3713 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 341 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 342 | train loss 0.3713 | val F1 0.0000
+22:50 | tsp_heatmap.train | epoch 343 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 344 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 345 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 346 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 347 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 348 | train loss 0.3713 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 349 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 350 | train loss 0.3712 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 351 | train loss 0.3712 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 352 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 353 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 354 | train loss 0.3712 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 355 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 356 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 357 | train loss 0.3713 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 358 | train loss 0.3713 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 359 | train loss 0.3713 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 360 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 361 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 362 | train loss 0.3712 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 363 | train loss 0.3712 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 364 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 365 | train loss 0.3712 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 366 | train loss 0.3712 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 367 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 368 | train loss 0.3713 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 369 | train loss 0.3712 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 370 | train loss 0.3712 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 371 | train loss 0.3713 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 372 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 373 | train loss 0.3712 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 374 | train loss 0.3712 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 375 | train loss 0.3712 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 376 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 377 | train loss 0.3713 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 378 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 379 | train loss 0.3712 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 380 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 381 | train loss 0.3713 | val F1 0.0003
+22:50 | tsp_heatmap.train | epoch 382 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 383 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 384 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 385 | train loss 0.3713 | val F1 0.0002
+22:50 | tsp_heatmap.train | epoch 386 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 387 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 388 | train loss 0.3713 | val F1 0.0001
+22:50 | tsp_heatmap.train | epoch 389 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 390 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 391 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 392 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 393 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 394 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 395 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 396 | train loss 0.3712 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 397 | train loss 0.3713 | val F1 0.0004
+22:50 | tsp_heatmap.train | epoch 398 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 399 | train loss 0.3713 | val F1 0.0005
+22:50 | tsp_heatmap.train | epoch 400 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 401 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 402 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 403 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 404 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 405 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 406 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 407 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 408 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 409 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 410 | train loss 0.3712 | val F1 0.0003
+22:51 | tsp_heatmap.train | epoch 411 | train loss 0.3712 | val F1 0.0001
+22:51 | tsp_heatmap.train | epoch 412 | train loss 0.3713 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 413 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 414 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 415 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 416 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 417 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 418 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 419 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 420 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 421 | train loss 0.3713 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 422 | train loss 0.3713 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 423 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 424 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 425 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 426 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 427 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 428 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 429 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 430 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 431 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 432 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 433 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 434 | train loss 0.3713 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 435 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 436 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 437 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 438 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 439 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 440 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 441 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 442 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 443 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 444 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 445 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 446 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 447 | train loss 0.3712 | val F1 0.0003
+22:51 | tsp_heatmap.train | epoch 448 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 449 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 450 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 451 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 452 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 453 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 454 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 455 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 456 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 457 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 458 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 459 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 460 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 461 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 462 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 463 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 464 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 465 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 466 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 467 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 468 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 469 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 470 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 471 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 472 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 473 | train loss 0.3712 | val F1 0.0004
+22:51 | tsp_heatmap.train | epoch 474 | train loss 0.3712 | val F1 0.0008
+22:51 | tsp_heatmap.train | epoch 475 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 476 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 477 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 478 | train loss 0.3712 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 479 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 480 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 481 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 482 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 483 | train loss 0.3712 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 484 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 485 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 486 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 487 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 488 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 489 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 490 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 491 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 492 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 493 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 494 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 495 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 496 | train loss 0.3711 | val F1 0.0005
+22:51 | tsp_heatmap.train | epoch 497 | train loss 0.3712 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 498 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | epoch 499 | train loss 0.3711 | val F1 0.0006
+22:51 | tsp_heatmap.train | epoch 500 | train loss 0.3711 | val F1 0.0007
+22:51 | tsp_heatmap.train | training done: 500 epochs in 192.5 s | best val F1 0.0008 @ epoch 474
+22:51 | tsp_heatmap.train | checkpoint: /home/Quan/Desktop/Neural-OR-Onboarding/src/tsp_heatmap/checkpoints/tsp_heatmap.pt
+22:51 | tsp_heatmap.orchestrator | loaded checkpoint: epoch 474, val F1 0.0008 (config seed=42)
+22:51 | tsp_heatmap.orchestrator | test: n=20 | precision@0.5: avg 0.0065 ± 0.0788 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+22:51 | tsp_heatmap.orchestrator | test: recall@0.5: avg 0.0004 ± 0.0042 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+22:51 | tsp_heatmap.orchestrator | test: F1@0.5: avg 0.0007 ± 0.0079 | Q1 0.0000 | median 0.0000 | Q3 0.0000
+22:51 | tsp_heatmap.orchestrator | test: precision top-20: avg 0.1952 ± 0.0317 | Q1 0.2000 | median 0.2000 | Q3 0.2000
+22:51 | tsp_heatmap.orchestrator | test: recall top-20: avg 0.1954 ± 0.0315 | Q1 0.2000 | median 0.2000 | Q3 0.2000
+22:51 | tsp_heatmap.orchestrator | test: k-NN coverage: avg 0.9984 ± 0.0088 | Q1 1.0000 | median 1.0000 | Q3 1.0000
+22:51 | tsp_heatmap.orchestrator | test inference: 0.2 s for 1000 instances (avg 0.0002 s/instance)
+22:51 | tsp_heatmap.orchestrator | total wall: 194.8 s
+22:51 | tsp_heatmap.orchestrator | results written to /home/Quan/Desktop/Neural-OR-Onboarding/results/tsp_heatmap/results.md
