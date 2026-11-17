@@ -8,9 +8,11 @@ Run from the repo root:
 
 Pipeline: build the 3 splits (gen + LKH-3 labeling + directed k-NN PyG graphs,
 idempotent — re-runs reuse the persisted tours), train the GNN edge classifier
-with best-val-F1 checkpointing, then load the checkpoint and evaluate the test
-split exactly once. Logs to results/tsp_heatmap/log.txt (mirrored to the
-terminal) and writes results/tsp_heatmap/results.md.
+with best-val top-20 F1 checkpointing, then load the checkpoint and evaluate
+the test split exactly once. Logs to results/tsp_heatmap/log.txt (mirrored to
+the terminal), draws the training curve to results/tsp_heatmap/training_curve.png
+(always overwritten on a new training run), and writes
+results/tsp_heatmap/results.md.
 """
 
 import argparse
@@ -32,6 +34,10 @@ import torch  # noqa: E402
 import torch_geometric  # noqa: E402
 from utils.logging_utils import setup_logging  # noqa: E402
 
+import matplotlib  # noqa: E402
+matplotlib.use("Agg")  # file output only, never opens a window
+import matplotlib.pyplot as plt  # noqa: E402
+
 import dataset  # noqa: E402
 import evaluate  # noqa: E402
 import train as train_mod  # noqa: E402
@@ -39,10 +45,11 @@ import train as train_mod  # noqa: E402
 REPO_ROOT = Path(__file__).resolve().parents[2]
 LOG_DIR = REPO_ROOT / "results" / "tsp_heatmap"
 RESULTS_MD = LOG_DIR / "results.md"
+PLOT_PATH = LOG_DIR / "training_curve.png"
 TOPK = 20
 THRESHOLD = 0.5
 
-HARDWARE = ("Ryzen 7 9700X", "Not used (CPU-only torch)")
+HARDWARE = ("Ryzen 7 9700X", "RTX 5060 Ti")
 
 
 def pick_device(name: str) -> torch.device:
@@ -58,6 +65,46 @@ def fmt_summary(d):
             f"median {d['median']:.4f} | Q3 {d['q3']:.4f}")
 
 
+def plot_training_curve(history, cfg, env_line):
+    """Per-epoch train loss, val loss (left axis) and val top-k F1 (right axis)
+    vs epoch, saved to PLOT_PATH (overwritten every run). File-based only
+    (matplotlib Agg backend set at import); no window is opened."""
+    epochs = np.array([h["epoch"] for h in history], dtype=np.int64)
+    train_losses = np.array([h["train_loss"] for h in history], dtype=np.float64)
+    val_losses = np.array([h["val_loss"] for h in history], dtype=np.float64)
+    val_topk_f1 = np.array([h["val_topk_f1"] for h in history], dtype=np.float64)
+    loss_colors = {"train": "#1f77b4", "val": "#d62728"}
+    topk_color = "#2ca02c"
+
+    fig, ax1 = plt.subplots(figsize=(9, 5))
+    for name, values in (("train", train_losses), ("val", val_losses)):
+        ax1.plot(epochs, values, color=loss_colors[name],
+                 label=f"{name} loss", lw=1.2)
+    ax1.set_xlabel("epoch")
+    ax1.set_ylabel("BCE loss")
+    ax1.set_xlim(1, max(len(epochs), 1))
+    ax1.grid(True, alpha=0.3)
+
+    ax2 = ax1.twinx()
+    ax2.plot(epochs, val_topk_f1, color=topk_color,
+             label=f"val top-{cfg['topk']} F1",
+             lw=1.2, ls="--", alpha=0.9)
+    ax2.set_ylabel(f"val top-{cfg['topk']} F1")
+
+    handles1, labels1 = ax1.get_legend_handles_labels()
+    handles2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left")
+    title = (f"TSP heatmap ({cfg['device']}, hidden={cfg['hidden']}, "
+             f"k-NN k={cfg['k']}, bs={cfg['batch_size']})\n"
+             f"{env_line} | split {cfg['train_n']}/{cfg['val_n']}/{cfg['test_n']}, "
+             f"n={cfg['n']}")
+    ax1.set_title(title, fontsize=10)
+
+    fig.tight_layout()
+    fig.savefig(PLOT_PATH)
+    plt.close(fig)
+
+
 def write_results_md(results, cfg, env_line):
     """results/tsp_heatmap/results.md, mirroring results/*/result.md."""
     s, pi = results["test"], results["per_instance_test"]
@@ -67,6 +114,7 @@ def write_results_md(results, cfg, env_line):
     tf = pi["threshold"]["f1"]
     tt = pi["topk"]["precision"]
     tt_r = pi["topk"]["recall"]
+    tt_f = pi["topk"]["f1"]
     covs = results["meta"]["coverage"]["test"]
     train_times = (results["train_time_s"] - results["infer_val_total_s"]) / cfg["epochs"]
 
@@ -81,9 +129,11 @@ def write_results_md(results, cfg, env_line):
           "directed edge (i, j) as in-tour or not (positive rate %d/%d = %s)."
           % (cfg["n"], cfg["n"] * cfg["k"], f"{cfg['n'] / (cfg['n'] * cfg['k']):.1%}"),
         "Instances: %d train / %d val / %d test, one global index i with seed = i "
-          "(no shared seeds). Model selection on val F1 (threshold %s); test "
-          "evaluated once on the best-val checkpoint." % (cfg["train_n"], cfg["val_n"],
-                                                          cfg["test_n"], THRESHOLD),
+          "(no shared seeds). Model selection on val top-%d F1 (fixed budget; the "
+          "@%s threshold F1 is degenerate here — see Interpretation in "
+          "markdown/tsp_heatmap_instructions.md); test evaluated once on the "
+          "best-val checkpoint."
+          % (cfg["train_n"], cfg["val_n"], cfg["test_n"], cfg["topk"], THRESHOLD),
         f"Environment: {env_line}.",
         "",
         f"## Test metrics (n = {s['n']} instances)",
@@ -95,11 +145,13 @@ def write_results_md(results, cfg, env_line):
         f"| F1 (p ≥ {THRESHOLD}) | {fmt_summary(s['threshold']['f1'])} |",
         f"| precision (top-{TOPK}) | {fmt_summary(s['topk']['precision'])} |",
         f"| recall (top-{TOPK}) | {fmt_summary(s['topk']['recall'])} |",
+        f"| F1 (top-{TOPK}, fixed budget) | {fmt_summary(s['topk']['f1'])} |",
         f"| k-NN tour-edge coverage | {fmt_summary(s['coverage'])} |",
         "",
         f"Per-instance test: min precision {tp.min():.4f} / min recall {tr.min():.4f} / "
         f"min F1 {tf.min():.4f} / min top-{TOPK} precision {tt.min():.4f} / "
-        f"min top-{TOPK} recall {tt_r.min():.4f} / coverage range "
+        f"min top-{TOPK} recall {tt_r.min():.4f} / min top-{TOPK} F1 {tt_f.min():.4f} / "
+        f"coverage range "
         f"[{min(covs):.4f}, {max(covs):.4f}].",
         "",
         "## Training runtimes",
@@ -149,10 +201,10 @@ def main():
     parser.add_argument("--n", type=int, default=20)
     parser.add_argument("--k", type=int, default=8)
     parser.add_argument("--hidden", type=int, default=64)
-    parser.add_argument("--epochs", type=int, default=50)
+    parser.add_argument("--epochs", type=int, default=500)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--lr", type=float, default=1e-3)
-    parser.add_argument("--weight-decay", type=float, default=0.0)
+    parser.add_argument("--weight-decay", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", type=str, default="auto",
                         choices=["auto", "cpu", "cuda"])
@@ -186,28 +238,34 @@ def main():
 
     # Load the best-val checkpoint and evaluate the test split exactly once.
     model, ckpt = train_mod.load_best_checkpoint(device)
-    log.info("loaded checkpoint: epoch %d, val F1 %.4f (config seed=%s)",
-             ckpt["epoch"], ckpt["val_f1"], ckpt["config"]["seed"])
+    log.info("loaded checkpoint: epoch %d, val top-%d F1 %.4f, val F1@%.2f %.4f "
+             "(config seed=%s)",
+             ckpt["epoch"], ckpt["config"]["topk"], ckpt.get("val_topk_f1", float("nan")),
+             THRESHOLD, ckpt.get("val_f1", float("nan")), ckpt["config"]["seed"])
     t, pi, infer_test_s = evaluate.evaluate_split(
-        model, datasets, meta, "test", device, topk=cfg["topk"])
+        model, datasets, meta, "test", device, topk=cfg["topk"],
+        loss_fn=torch.nn.BCEWithLogitsLoss())
     # Keep the numpy arrays (write_results_md mins them); test is scored exactly
     # once, so these are the final test-split per-instance values.
     per_instance_test = {
         "threshold": {m: pi["threshold"][m] for m in ("precision", "recall", "f1")},
-        "topk": {m: pi["topk"][m] for m in ("precision", "recall")},
+        "topk": {m: pi["topk"][m] for m in ("precision", "recall", "f1")},
     }
     results = {
         "test": t, "per_instance_test": per_instance_test, "meta": meta,
         "train_time_s": tr["train_time_s"], "infer_val_total_s": tr["infer_val_total_s"],
-        "infer_test_s": infer_test_s, "best_val_f1": tr["best_val_f1"],
-        "best_epoch": tr["best_epoch"],
+        "infer_test_s": infer_test_s, "best_val_topk_f1": tr["best_val_topk_f1"],
+        "best_val_f1": tr["best_val_f1"], "best_epoch": tr["best_epoch"],
+        "history": tr["history"],
     }
-    log.info("test: n=%d | precision@%s: %s", cfg["topk"], THRESHOLD,
+    log.info("test loss: %.4f", t["loss"])
+    log.info("test: precision@%.2f: %s", THRESHOLD,
              fmt_summary(t["threshold"]["precision"]))
-    log.info("test: recall@%s: %s", THRESHOLD, fmt_summary(t["threshold"]["recall"]))
-    log.info("test: F1@%s: %s", THRESHOLD, fmt_summary(t["threshold"]["f1"]))
+    log.info("test: recall@%.2f: %s", THRESHOLD, fmt_summary(t["threshold"]["recall"]))
+    log.info("test: F1@%.2f: %s", THRESHOLD, fmt_summary(t["threshold"]["f1"]))
     log.info("test: precision top-%d: %s", cfg["topk"], fmt_summary(t["topk"]["precision"]))
     log.info("test: recall top-%d: %s", cfg["topk"], fmt_summary(t["topk"]["recall"]))
+    log.info("test: F1 top-%d: %s", cfg["topk"], fmt_summary(t["topk"]["f1"]))
     log.info("test: k-NN coverage: %s", fmt_summary(t["coverage"]))
     log.info("test inference: %.1f s for %d instances (avg %.4f s/instance)",
              infer_test_s, t["n"], infer_test_s / t["n"])
@@ -215,6 +273,9 @@ def main():
 
     write_results_md(results, cfg, env_line)
     log.info("results written to %s", RESULTS_MD)
+
+    plot_training_curve(results["history"], cfg, env_line)
+    log.info("training curve written to %s", PLOT_PATH)
 
 
 if __name__ == "__main__":
