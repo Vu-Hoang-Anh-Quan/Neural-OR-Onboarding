@@ -88,7 +88,7 @@ def plot_training_curve(history, cfg, env_line):
     ax2 = ax1.twinx()
     ax2.plot(epochs, val_topk_f1, color=topk_color,
              label=f"val top-{cfg['topk']} F1",
-             lw=1.2, ls="--", alpha=0.9)
+             lw=1.2, alpha=0.9)
     ax2.set_ylabel(f"val top-{cfg['topk']} F1")
 
     handles1, labels1 = ax1.get_legend_handles_labels()
