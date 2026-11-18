@@ -204,7 +204,7 @@ def main():
     parser.add_argument("--epochs", type=int, default=500)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--lr", type=float, default=1e-3)
-    parser.add_argument("--weight-decay", type=float, default=0.1)
+    parser.add_argument("--weight-decay", type=float, default=0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", type=str, default="auto",
                         choices=["auto", "cpu", "cuda"])
