@@ -11,21 +11,21 @@ Environment: Python 3.11.17, torch 2.11.0+cu128, PyG 2.8.1, NumPy 2.4.6.
 | precision (p ≥ 0.5) | avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000 |
 | recall (p ≥ 0.5) | avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000 |
 | F1 (p ≥ 0.5) | avg 0.0000 ± 0.0000 | Q1 0.0000 | median 0.0000 | Q3 0.0000 |
-| precision (top-20) | avg 0.1955 ± 0.0290 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
-| recall (top-20) | avg 0.1957 ± 0.0289 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
-| F1 (top-20, fixed budget) | avg 0.1956 ± 0.0290 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
+| precision (top-20) | avg 0.1944 ± 0.0323 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
+| recall (top-20) | avg 0.1946 ± 0.0321 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
+| F1 (top-20, fixed budget) | avg 0.1945 ± 0.0322 | Q1 0.2000 | median 0.2000 | Q3 0.2000 |
 | k-NN tour-edge coverage | avg 0.9984 ± 0.0088 | Q1 1.0000 | median 1.0000 | Q3 1.0000 |
 
-Per-instance test: min precision 0.0000 / min recall 0.0000 / min F1 0.0000 / min top-20 precision 0.1000 / min top-20 recall 0.1053 / min top-20 F1 0.1026 / coverage range [0.9500, 1.0000].
+Per-instance test: min precision 0.0000 / min recall 0.0000 / min F1 0.0000 / min top-20 precision 0.0500 / min top-20 recall 0.0500 / min top-20 F1 0.0500 / coverage range [0.9500, 1.0000].
 
 ## Training runtimes
 
 | quantity | value |
 |----------|-------|
 | LKH-3 labeling | 0 run, 3000 reused; 0.000 s/instance averaged over runs |
-| dataset build (gen + label + k-NN) | 1.9 s |
-| training | 309.6 s over 500 epochs, avg 0.062 s/epoch |
-| per-epoch val inference (over 500 epochs, incl.) | 278.7 s |
+| dataset build (gen + label + k-NN) | 2.0 s |
+| training | 294.9 s over 500 epochs, avg 0.039 s/epoch |
+| per-epoch val inference (over 500 epochs, incl.) | 275.4 s |
 
 ## Test inference runtime
 
@@ -45,7 +45,7 @@ Per-instance test: min precision 0.0000 / min recall 0.0000 / min F1 0.0000 / mi
 | hidden | 64 |
 | dropout | 0.1 |
 | epochs | 500 |
-| batch_size | 64 |
+| batch_size | 256 |
 | lr | 0.001 |
 | weight_decay | 0 |
 | seed | 42 |
