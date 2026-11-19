@@ -4,7 +4,7 @@ Goal: implement vanilla REINFORCE (policy gradient, on-policy, full episodes, re
 Run from repo root: `conda activate nor && python src/reinforce_cartpole/orchestrator.py [--episodes 1000] [--seeds 0 1 2 3 4] [--lr 0.01] [--baseline 0.5] [--device auto]`
 
 ## Overview & Invariants
-- Env is `nor` (Python 3.11.17). Already installed: `gymnasium 1.4.0`, `torch 2.11.0+cu128`, `numpy 2.4.6`, `matplotlib 3.11.2` (all in `requirements.txt`). Record versions in the Result section.
+- Env is `nor` (Python 3.11.17). Already installed: `gymnasium 1.4.0`, `torch 2.11.0+cu128`, `numpy 2.4.6`, `matplotlib 3.11.2` (all in `requirements.txt`). Record versions in `results.md` (the orchestrator writes it automatically each run).
 - Algorithm invariants (all versions, non-negotiable):
   - **gamma = 1.0** (no discount — episodes last at most 500 steps).
   - **Reward-to-go:** log-probability of the action taken at step t is weighted by `G_t = sum_{t' >= t} R_{t'}` (sum of the remaining rewards from t to the end of the episode, **including** `R_t`).
@@ -19,7 +19,7 @@ Run from repo root: `conda activate nor && python src/reinforce_cartpole/orchest
   - `src/reinforce_cartpole/train.py` — `run_policy(seed, episodes, lr, baseline_b)` (runs ONE (variant, seed) full pass, logs a short summary line; returns per-episode arrays) and `train(variants=..., seeds=..., ...)` that loops all (variant, seed) runs and returns the collected data dict.
   - `src/reinforce_cartpole/orchestrator.py` — **the only entry point** and the only `setup_logging(log_dir)` caller (root `basicConfig` wins once); bootstraps `sys.path` with the `src/` dir (parents[1]) to reach `utils/logging_utils`; owns the CLI (`argparse`); drives train → writes CSV → plots the PNG → writes `results/reinforce_cartpole/results.md`; logs date, python/package versions, config.
 - **Output shape:** per `(variant, seed)` run a list of rows `(episode_index, variant, seed, return, baseline_after_update, steps)`. Aggregate over the 5 seeds of each variant, per episode index, via numpy: `mean`, `std` (population std `ddof=0`).
-- Hardware to record: **CPU Ryzen 7 9700 X, GPU RTX 5060 Ti.** `device auto` maps to `cuda` when `torch.cuda.is_available()` (it is — CUDA is present here), else `cpu`. Whatever value the run actually used must be recorded in results.md and the Result section (it should match `torch.cuda.is_available()` at runtime).
+- Hardware to record: **CPU Ryzen 7 9700 X, GPU RTX 5060 Ti.** `device auto` maps to `cuda` when `torch.cuda.is_available()` (it is — CUDA is present here), else `cpu`. Whatever value the run actually used must be recorded in results.md (it should match `torch.cuda.is_available()` at runtime).
 
 ## Step-by-step workflow
 - [x] 1. Write this plan.
@@ -32,8 +32,4 @@ Run from repo root: `conda activate nor && python src/reinforce_cartpole/orchest
   - Default run: **1000 episodes** per (variant, seed) run, 5 seeds → 10,000 episodes total.
   - `src/reinforce_cartpole/checkpoints/` + `.pt` checkpoints are **not needed** and must not be invented; do not create a checkpoints dir for this task.
 - [ ] 5. Smoke test: `python src/reinforce_cartpole/orchestrator.py --episodes 50 --seeds 0 1` — verify CSV + PNG + results.md are written, log lines appear on the terminal and in `results/reinforce_cartpole/log.txt`, episode returns rise over time on both variants (sanity), and no baseline NaN/inf.
-- [ ] 6. Full run: `python src/reinforce_cartpole/orchestrator.py` (defaults: 1000 episodes, seeds 0..4, lr 0.01, B 0.5).
-- [ ] 7. Fill in the Result section below and finalize `results/reinforce_cartpole/results.md`.
-
-## Result
-(To be filled after the full run: best mean return + episode index per variant, runtimes, hardware, versions.)
+- [ ] 6. Full run: `python src/reinforce_cartpole/orchestrator.py` (defaults: 1000 episodes, seeds 0..4, lr 0.01, B 0.5). `results.md` is written by the orchestrator itself at the end of the run (auto-filled, mirrors `results/*/result.md` conventions) — no manual filling.

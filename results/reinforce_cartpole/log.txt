@@ -1,0 +1,20 @@
+09:55 | reinforce_cartpole.orchestrator | run started | 2026-11-19T09:55:32 | device=cpu | Python 3.11.17, torch 2.11.0+cu128, gymnasium 1.4.0, NumPy 2.4.6, matplotlib 3.11.2
+09:55 | reinforce_cartpole.orchestrator | cfg episodes     = 50
+09:55 | reinforce_cartpole.orchestrator | cfg lr           = 0.01
+09:55 | reinforce_cartpole.orchestrator | cfg baseline_b   = 0.5
+09:55 | reinforce_cartpole.orchestrator | cfg seeds        = [0, 1]
+09:55 | reinforce_cartpole.orchestrator | cfg gamma        = 1.0
+09:55 | reinforce_cartpole.orchestrator | cfg variants     = ['no_baseline', 'moving_avg']
+09:55 | reinforce_cartpole.orchestrator | cfg device       = cpu
+09:55 | reinforce_cartpole.orchestrator | cfg device_arg   = cpu
+09:55 | reinforce_cartpole.orchestrator | CUDA available at runtime: True
+09:55 | reinforce_cartpole.train | variant=no_baseline seed=0 done | 50 episodes in 0.3 s | best return 186 (ep +36), final return 31, final baseline 0.0
+09:55 | reinforce_cartpole.train | variant=no_baseline seed=1 done | 50 episodes in 0.4 s | best return 199 (ep +49), final return 83, final baseline 0.0
+09:55 | reinforce_cartpole.train | variant=moving_avg seed=0 done | 50 episodes in 0.4 s | best return 199 (ep +26), final return 32, final baseline 32.1
+09:55 | reinforce_cartpole.train | variant=moving_avg seed=1 done | 50 episodes in 0.2 s | best return 63 (ep +31), final return 25, final baseline 19.4
+09:55 | reinforce_cartpole.orchestrator | summary no_baseline  best mean return 138.5 at episode 36 | final mean 57.0
+09:55 | reinforce_cartpole.orchestrator | summary moving_avg   best mean return 107.0 at episode 26 | final mean 28.5
+09:55 | reinforce_cartpole.orchestrator | CSV written to /home/Quan/Desktop/Neural-OR-Onboarding/results/reinforce_cartpole/training.csv (200 rows)
+09:55 | reinforce_cartpole.orchestrator | returns curve written to /home/Quan/Desktop/Neural-OR-Onboarding/results/reinforce_cartpole/returns_curve.png
+09:55 | reinforce_cartpole.orchestrator | results written to /home/Quan/Desktop/Neural-OR-Onboarding/results/reinforce_cartpole/results.md
+09:55 | reinforce_cartpole.orchestrator | total wall: 1.9 s
