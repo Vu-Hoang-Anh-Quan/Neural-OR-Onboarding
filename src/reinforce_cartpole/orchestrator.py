@@ -2,17 +2,20 @@
 
 Run from the repo root:
     conda activate nor && python src/reinforce_cartpole/orchestrator.py \
-        [--episodes 1000] [--seeds 0 1 2 3 4] [--lr 0.01] [--baseline 0.5] \
+        [--epochs 100] [--seeds 0 1 2 3 4] [--lr 0.01] [--baseline 0.5] \
         [--device auto]
 
-Pipeline: train vanilla REINFORCE (gamma = 1.0, reward-to-go, truncated
-episodes kept as-is) on CartPole-v1 for two variants — `no_baseline` and
-`moving_avg` — over all (variant, seed) runs, then write
-results/reinforce_cartpole/training.csv (one row per episode of every run),
-returns_curve.png (mean +/- 1 std over the seeds, one line per variant) and
-results.md (per-variant best mean return + episode it occurs at, full config,
-hardware, device used, versions). Logs to results/reinforce_cartpole/log.txt
-(mirrored to the terminal).
+Policy model: 2 variants x 5 seeds = 10 distinct policies, each trained
+independently for `epochs` epochs of `per_epoch` (= 10) fresh env episodes
+("instances"). Pipeline: train vanilla REINFORCE (gamma = 1.0, reward-to-go,
+truncated episodes kept as-is) for every policy, then write
+results/reinforce_cartpole/training.csv (one row per (variant, seed, epoch):
+per-epoch return stats and the baseline), returns_curve.png (x = epoch 1..E,
+y = mean of the epoch's 10 instance returns, band = mean ± 1 std — one line
+per variant, showing the variant's best-seed policy) and results.md
+(per-variant best-seed policy: mean ± std at its best epoch, full config,
+hardware, device used, versions). Logs to
+results/reinforce_cartpole/log.txt (mirrored to the terminal).
 """
 
 import argparse
@@ -50,6 +53,7 @@ RESULTS_MD = LOG_DIR / "results.md"
 HARDWARE = ("Ryzen 7 9700 X", "RTX 5060 Ti")
 VARIANT_COLORS = {"no_baseline": "#1f77b4", "moving_avg": "#d62728"}
 GAMMA = 1.0  # fixed by the task invariants — no discount
+PER_EPOCH = 10  # env episodes ("instances") sampled per policy per epoch (fixed)
 
 
 def pick_device(name: str) -> torch.device:
@@ -60,68 +64,54 @@ def pick_device(name: str) -> torch.device:
     return torch.device(name)
 
 
-def aggregate_by_variant(data):
-    """Per variant: returns matrix (episodes, seeds) and mean/std (ddof=0)
-    across seeds at each episode index; plus best mean value + episode index
-    (1-based, matching the plot x-axis) and final (last-episode) mean."""
-    out = {}
-    for variant in train_mod.VARIANTS:
-        runs = [data["runs"][variant][seed]["returns"] for seed in data["seeds"]]
-        matrix = np.stack(runs, axis=1)  # (E, S)
-        mean = matrix.mean(axis=1)
-        std = matrix.std(axis=1, ddof=0)
-        best_idx = int(np.argmax(mean))
-        out[variant] = {
-            "returns": matrix,
-            "mean": mean,
-            "std": std,
-            "best_mean": float(mean[best_idx]),
-            "best_episode": best_idx + 1,
-            "final_mean": float(mean[-1]),
-        }
-    return out
-
-
 def write_csv(data, path):
-    """One row per episode of every (variant, seed) run:
-    variant,seed,episode,return,baseline,steps. episode numbered 1..E."""
+    """One row per (variant, seed, epoch):
+    variant,seed,epoch,return_mean,return_std,baseline — per-epoch return
+    stats over the epoch's per_epoch fresh env episodes ("instances");
+    baseline = the policy's baseline value after the epoch's update (0 for
+    the no_baseline variant)."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["variant", "seed", "episode", "return", "baseline", "steps"])
-        for variant in train_mod.VARIANTS:
+        writer.writerow(["variant", "seed", "epoch", "return_mean",
+                         "return_std", "baseline"])
+        for variant in data["variants"]:
             for seed in data["seeds"]:
                 res = data["runs"][variant][seed]
-                for i, ep in enumerate(res["returns"]):
-                    # Returns are exact integers here (sum of +1.0 rewards =
-                    # episode length, <= 500).
+                for e in range(data["epochs"]):
                     writer.writerow([
-                        variant, seed, i + 1,
-                        f"{ep:.0f}", f"{res['baseline'][i]:.4f}", int(res["steps"][i]),
+                        variant, seed, e + 1,
+                        f"{res['mean'][e]:.2f}", f"{res['std'][e]:.2f}",
+                        f"{res['baseline'][e]:.4f}",
                     ])
 
 
-def plot_returns_curve(stats, cfg, env_line):
-    """One line per variant: solid mean return over all seeds, shaded
-    mean +/- 1 std band, x = episode 1..E. Saved to PLOT_PATH (overwritten
-    every run). File-based only (Agg backend set at import)."""
-    episodes = cfg["episodes"]
-    x = np.arange(1, episodes + 1)
+def plot_returns_curve(data, cfg, env_line):
+    """One line per variant, showing the variant's best-seed policy
+    (highest best-epoch mean g): x = epoch 1..E, line = mean of the epoch's
+    PER_EPOCH instance returns, shaded band = mean ± 1 std (population std,
+    ddof=0) over those instances. Saved to PLOT_PATH (overwritten every run).
+    File-based only (Agg backend set at import)."""
+    epochs = cfg["epochs"]
+    x = np.arange(1, epochs + 1)
     fig, ax = plt.subplots(figsize=(9, 5))
-    for variant in train_mod.VARIANTS:
-        s = stats[variant]
+    for variant in cfg["variants"]:
+        b = data["best"][variant]
+        res = data["runs"][variant][b["seed"]]
         color = VARIANT_COLORS[variant]
-        ax.fill_between(x, s["mean"] - s["std"], s["mean"] + s["std"],
+        ax.fill_between(x, res["mean"] - res["std"], res["mean"] + res["std"],
                         color=color, alpha=0.2, label=None)
-        ax.plot(x, s["mean"], color=color, lw=1.2,
-                label=f"{variant} — mean ± std ({len(cfg['seeds'])} seeds)")
-    ax.set_xlabel("Episode")
+        ax.plot(x, res["mean"], color=color, lw=1.2,
+                label=(f"{variant} — best seed {b['seed']}, "
+                       f"mean of {cfg['per_epoch']} episodes/epoch"))
+    ax.set_xlabel("Epoch")
     ax.set_ylabel("Return")
-    ax.set_xlim(1, max(episodes, 1))
+    ax.set_xlim(1, max(epochs, 1))
     ax.legend(loc="lower right")
     ax.grid(True, alpha=0.3)
     title = (f"REINFORCE CartPole-v1 — return = episode length (gamma = {GAMMA})\n"
-             f"episodes={episodes}, lr={cfg['lr']}, B={cfg['baseline_b']}, "
+             f"epochs={epochs} x {cfg['per_epoch']} episodes, "
+             f"lr={cfg['lr']}, B={cfg['baseline_b']}, "
              f"seeds={cfg['seeds']}, device={cfg['device']}")
     ax.set_title(title, fontsize=10)
     fig.tight_layout()
@@ -129,63 +119,75 @@ def plot_returns_curve(stats, cfg, env_line):
     plt.close(fig)
 
 
-def write_results_md(stats, data, cfg, runtimes, env_line):
-    """results/reinforce_cartpole/results.md, mirroring results/*/result.md."""
+def write_results_md(data, cfg, runtimes, env_line):
+    """results/reinforce_cartpole/results.md, mirroring results/*/result.md.
+
+    Depicts only the best-seed policy of each variant: that policy's mean ±
+    std at its best epoch (the epoch with the highest per-epoch mean return,
+    earliest on a tie)."""
+    n_seeds = len(cfg["seeds"])
+    n_policies = len(cfg["variants"]) * n_seeds
     lines = [
         "# REINFORCE CartPole-v1 results",
         "",
         "Vanilla REINFORCE (on-policy policy gradient, gamma = 1.0, reward-to-go) "
-        "on CartPole-v1, two variants: `no_baseline` and `moving_avg` (per-episode "
-        "moving-average baseline, B = 0.5, initial baseline 0.0). "
-        f"{cfg['episodes']} episodes per (variant, seed) run, seeds "
-        f"{cfg['seeds']} — same episode index comparable across variants/seeds. "
+        f"on CartPole-v1, two variants — `no_baseline` and `moving_avg` (moving-average "
+        f"baseline updated once per epoch, b <- b*(1-B) + G_epoch*B, B = {cfg['baseline_b']}, "
+        f"initial 0.0) — with {n_seeds} seed policies per variant: {n_policies} "
+        "distinct "
+        "policies, each trained independently for "
+        f"{cfg['epochs']} epochs of {cfg['per_epoch']} fresh env episodes ("
+        f"\"instances\"). A policy's epoch return = mean of its {cfg['per_epoch']} instance "
+        "returns of that epoch (std = population std, ddof = 0). "
         "Model: Linear(4,64) -> ReLU -> Linear(64,2) -> Softmax; "
-        f"Adam lr = {cfg['lr']}; one optimizer update per episode over the "
+        f"Adam lr = {cfg['lr']}; one optimizer update per env episode over its "
         "full-episode batch (loss = -sum_t logprob_t * (G_t - baseline), "
-        "G_t = sum_{t' >= t} R_{t'}). CartPole-v1 rewards +1.0 per step (the "
-        "terminal step included), so return = episode length (<= 500); "
-        "truncated (500-step) episodes are kept as-is, no bootstrap or bonus.",
+        "G_t = sum_{t' >= t} R_{t'}). CartPole-v1 rewards +1.0 per step "
+        "(the terminal step included), so each episode return = its length "
+        "(<= 500); truncated (500-step) episodes are kept as-is, no bootstrap "
+        "or bonus.",
         f"Environment: {env_line}.",
         "",
-        "## Best results per variant",
+        f"## Best results per variant (best of the {n_seeds} seed policies)",
         "",
-        "| variant | best mean return | at episode | mean return at final episode |",
-        "|---------|------------------|------------|------------------------------|",
+        "| variant | best seed | best-g (mean ± std) | at epoch | final g (mean ± std) |",
+        "|---------|-----------|---------------------|----------|----------------------|",
     ]
-    for variant in train_mod.VARIANTS:
-        s = stats[variant]
+    for variant in data["variants"]:
+        b = data["best"][variant]
+        fs = data["policy_stats"][variant][b["seed"]]
         lines.append(
-            f"| {variant} | {s['best_mean']:.1f} | {s['best_episode']} "
-            f"| {s['final_mean']:.1f} |"
+            f"| {variant} | {b['seed']} | {b['g']:.1f} ± {b['g_std']:.1f} "
+            f"| {b['epoch']} | {fs['final_g']:.1f} ± {fs['final_g_std']:.1f} |"
         )
     lines += [
         "",
-        "Best mean return = max over episode index of the per-episode mean over "
-        f"the {len(cfg['seeds'])} seeds (std ddof = 0); curve in "
-        f"`returns_curve.png` (mean line, filled band = mean ± 1 std).",
+        f"All per-epoch lines of `returns_curve.png` are the mean ± 1 std of the "
+        f"{cfg['per_epoch']} instance returns of the best-seed policy of each variant; "
+        "'best seed' = the policy with the highest best-epoch mean g; 'best epoch' "
+        "= the epoch with the highest per-epoch mean g of that policy.",
         "",
         "## Runtimes",
         "",
         "| quantity | value |",
         "|----------|-------|",
     ]
-    for variant in train_mod.VARIANTS:
-        per_run = np.array([data["runs"][variant][seed]["run_time_s"]
-                            for seed in data["seeds"]])
+    for variant in data["variants"]:
         lines.append(
-            f"| training, {variant} ({len(cfg['seeds'])} x {cfg['episodes']} episodes) "
-            f"| {per_run.sum():.1f} s total, {per_run.mean():.1f} s/run avg |"
+            f"| training, {variant} "
+            f"({len(cfg['seeds'])} seed policies x {cfg['epochs']} epochs) "
+            f"| {runtimes[variant]:.1f} s |"
         )
     lines += [
-        f"| total (all {2 * len(cfg['seeds'])} runs) | {runtimes['total_s']:.1f} s |",
+        f"| total (all {n_policies} policies) | {runtimes['total']:.1f} s |",
         "",
         "## Configuration",
         "",
         "| key | value |",
         "|-----|-------|",
     ]
-    for key in ("episodes", "lr", "baseline_b", "seeds", "gamma", "variants",
-                "device"):
+    for key in ("epochs", "per_epoch", "lr", "baseline_b", "seeds", "gamma",
+                "variants", "device"):
         lines.append(f"| {key} | {cfg[key]} |")
     lines += [
         "",
@@ -205,8 +207,8 @@ def write_results_md(stats, data, cfg, runtimes, env_line):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
-                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--episodes", type=int, default=1000)
+                                       formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2, 3, 4])
     parser.add_argument("--lr", type=float, default=0.01)
     parser.add_argument("--baseline", type=float, default=0.5)
@@ -222,7 +224,8 @@ def main():
                 % (sys.version.split()[0], torch.__version__,
                    gymnasium.__version__, np.__version__, matplotlib.__version__))
     cfg = {
-        "episodes": args.episodes, "lr": args.lr, "baseline_b": args.baseline,
+        "epochs": args.epochs, "per_epoch": PER_EPOCH,
+        "lr": args.lr, "baseline_b": args.baseline,
         "seeds": args.seeds, "gamma": GAMMA,
         "variants": list(train_mod.VARIANTS), "device": str(device),
         "device_arg": args.device,
@@ -237,22 +240,27 @@ def main():
 
     t_total = time.perf_counter()
     data = train_mod.train(variants=tuple(train_mod.VARIANTS), seeds=args.seeds,
-                           episodes=args.episodes, lr=args.lr,
+                           epochs=args.epochs, per_epoch=PER_EPOCH, lr=args.lr,
                            baseline_b=args.baseline, device=device)
     total_s = time.perf_counter() - t_total
 
-    stats = aggregate_by_variant(data)
-    for variant in train_mod.VARIANTS:
-        s = stats[variant]
-        log.info("summary %-12s best mean return %.1f at episode %d | final mean %.1f",
-                 variant, s["best_mean"], s["best_episode"], s["final_mean"])
+    for variant in data["variants"]:
+        b = data["best"][variant]
+        log.info("summary %-12s best seed %d: best g %.1f ± %.1f at epoch %d "
+                 "| final g %.1f ± %.1f",
+                 variant, b["seed"], b["g"], b["g_std"], b["epoch"],
+                 data["policy_stats"][variant][b["seed"]]["final_g"],
+                 data["policy_stats"][variant][b["seed"]]["final_g_std"])
+
+    runtimes = dict(data["runtimes"])
+    runtimes["total"] = total_s
 
     write_csv(data, CSV_PATH)
-    n_rows = len(data["seeds"]) * data["episodes"] * len(train_mod.VARIANTS)
+    n_rows = len(data["seeds"]) * data["epochs"] * len(data["variants"])
     log.info("CSV written to %s (%d rows)", CSV_PATH, n_rows)
-    plot_returns_curve(stats, cfg, env_line)
+    plot_returns_curve(data, cfg, env_line)
     log.info("returns curve written to %s", PLOT_PATH)
-    write_results_md(stats, data, cfg, {"total_s": total_s}, env_line)
+    write_results_md(data, cfg, runtimes, env_line)
     log.info("results written to %s", RESULTS_MD)
     log.info("total wall: %.1f s", total_s)
 

@@ -2,8 +2,10 @@
 
 Architecture (fixed by the task invariants, markdown/reinforce_cartpole_instructions.md):
 obs (4-dim) -> Linear(4, 64) -> ReLU -> Linear(64, 2) -> Softmax -> action probs.
-Acting samples from a Categorical distribution so the trainer gets a proper
-per-step log-probability (float32) whose graph reaches the weights.
+Acting samples from a Categorical distribution using the caller's torch.Generator,
+which both yields a proper per-step log-probability (float32, graph reaching the
+weights) and keeps each policy's action stream reproducible from its own seed,
+independent of every other policy's episodes.
 """
 
 import torch
@@ -22,18 +24,24 @@ class CartPolePolicy(nn.Module):
             nn.Softmax(dim=-1),
         )
 
-    def act(self, obs, device):
+    def act(self, obs, device, generator):
         """Sample one action for a single obs.
 
-        obs: (4,) numpy/float array from the env; moved to `device` here
-        (the env always produces CPU tensors).
-        Returns (action, logprob), both float32 tensors on `device`: the
-        sampled action (consumed via .item() for env.step) and its log-prob,
-        which carries the parameter graph so gradients flow (one full-episode
-        update per episode, per the invariants).
+        obs: (4,) float array from the env. Returns (action, logprob), both
+        float32 on `device`: the sampled action (consumed via .item() for
+        env.step) and its log-prob, which carries the parameter graph so
+        gradients flow (one end-of-episode update per env episode, per
+        invariants). This torch build's Categorical.sample() takes no
+        generator, so the action is drawn from the policy's generator via CDF
+        sampling (exact Categorical sampling, equivalent to
+        multinomial(generator=...)); log-prob = Categorical(probs).log_prob(action),
+        which carries the parameter graph for the end-of-episode update.
         """
         obs_t = torch.as_tensor(obs, dtype=torch.float32, device=device)
         probs = self.net(obs_t)
         dist = torch.distributions.Categorical(probs)
-        action = dist.sample()
+        u = torch.rand((), generator=generator, dtype=torch.float32, device=device)
+        with torch.no_grad():
+            cdf = probs.double().cumsum(dim=-1)
+        action = (cdf >= u.double()).long().argmax()  # first bin with F_k >= u
         return action, dist.log_prob(action)
