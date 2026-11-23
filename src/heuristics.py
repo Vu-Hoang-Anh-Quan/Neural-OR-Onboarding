@@ -22,29 +22,50 @@ def nearest_neighbor(D, start=0):
 
 
 def two_opt(tour, D):
-    """First-improvement 2-opt, expected O(n^2) (O(1) delta per (i, k) pair).
-    Move (i, k): reverse tour[i:k+1].
-    delta = D[a,c] + D[b,d] - D[a,b] - D[c,d], with a=tour[i-1], b=tour[i],
-    c=tour[k], d=tour[(k+1)%n]. Repeats until no delta < -1e-9 remains.
-    Mutates and returns tour."""
+    """First-improvement 2-opt for (symmetric or asymmetric) TSP, O(n^2) per
+    pass (O(1) incremental delta per (i, k) pair).
+
+    Move (i, k): reverse the segment tour[i+1 .. k] of the closed tour.  On an
+    asymmetric matrix this changes not only the two boundary edges but also the
+    traversal direction of every internal edge of the segment, so the delta
+    must include the internal edge cost in both directions:
+
+        delta(i, k) = D[a, c] + D[b, d] - D[a, b] - D[c, d] + (R - F)
+
+    with a = tour[i], b = tour[i+1], c = tour[k], d = tour[(k+1) % n],
+    F = sum of D[s, t] over the segment's edges in traversal order, and
+    R = the same sum with each edge reversed.  For a symmetric D, R == F so
+    (R - F) vanishes and this reduces exactly to the classic 2-opt delta.
+    F and R are updated incrementally as k advances, so the extra cost is
+    O(1) per (i, k).  Because delta is the *true* tour-length change and every
+    accepted move strictly decreases the tour length (a bounded integer on the
+    integer matrix), the first-improvement loop is guaranteed to terminate.
+    Repeats until no delta < -1e-9 remains.  Mutates and returns tour."""
     n = len(tour)
-    print(tour[0])
-    # print(D)
+    sym = bool(np.array_equal(D, D.T))  # exact-symmetric D: R - F is 0
     improved = True
     while improved:
         improved = False
         for i in range(n - 2):
             a = tour[i]
-            b = tour[i+1]
+            b = tour[i + 1]
+            F = 0.0   # forward (traversal-order) internal cost of the segment
+            R = 0.0   # reversed internal cost of the same edge set
             for k in range(i + 2, n):
+                if not sym:
+                    # Extend the segment with tour[k]; add the new tail edge
+                    # tour[k-1] -> tour[k] to F and its reverse to R.
+                    F += D[tour[k - 1], tour[k]]
+                    R += D[tour[k], tour[k - 1]]
                 c = tour[k]
                 d = tour[(k + 1) % n]
-                if D[a, c] + D[b, d] - D[a, b] - D[c, d] < -1e-9:
-                    # print(f"{n} {i} {k}")
-                    tour[i+1:k + 1] = tour[i+1:k + 1][::-1]
+                delta = D[a, c] + D[b, d] - D[a, b] - D[c, d]
+                if not sym:
+                    delta += R - F
+                if delta < -1e-9:
+                    tour[i + 1:k + 1] = tour[i + 1:k + 1][::-1]
                     improved = True
                     break
-                assert not improved
             if improved:
                 break
         if not improved:
