@@ -79,4 +79,4 @@ Device used (resolved --device=auto): cuda
 eval base offset (BASE): 1000000000
 
 ## Notes
-Even after 1000 epochs, the two variants haven't converged yet, as you can observe in the two returns curve `.png` files. However, the results is acceptable, and the author do not have the computational resources to run another 2000 epochs training.
+Even after 1000 epochs, the two variants haven't converged yet, as you can observe in the two returns curve `.png` files. However, the result is acceptable, and the author does not have the computational resources to run another 2000 epochs training.
