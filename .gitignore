@@ -10,6 +10,8 @@ data/*
 # opencode
 AGENTS.md
 opencode.jsonc
+results/equal_evaluation/cvrp50/
+results/equal_evaluation/x/
 
 # Python
 __pycache__/
