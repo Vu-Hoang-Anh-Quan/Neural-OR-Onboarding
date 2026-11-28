@@ -6,12 +6,12 @@ venv/
 # Data
 data/*
 !data/README.md
+results/equal_evaluation/cvrp50/
+results/equal_evaluation/x/
 
 # opencode
 AGENTS.md
 opencode.jsonc
-results/equal_evaluation/cvrp50/
-results/equal_evaluation/x/
 
 # Python
 __pycache__/
