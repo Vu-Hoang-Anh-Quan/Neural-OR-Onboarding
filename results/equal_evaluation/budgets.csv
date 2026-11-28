@@ -1,0 +1,4 @@
+mode,measured_median_s,column_time_s,merged_into_fixed
+greedy,0.0300,0.03,
+augment_dihedral_8,0.0318,0.03,
+sampling,0.0454,0.05,

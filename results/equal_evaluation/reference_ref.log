@@ -1,0 +1,27 @@
+
+=== solvers_cli.py --reference started 2026-11-27 22:53:18 ===
+22:53 | equal_evaluation.reference | reference: 1000 instances, 1 committed (resume)
+23:42 | equal_evaluation.reference | reference: 50/1000 done
+00:32 | equal_evaluation.reference | reference: 100/1000 done
+01:22 | equal_evaluation.reference | reference: 150/1000 done
+02:12 | equal_evaluation.reference | reference: 200/1000 done
+03:02 | equal_evaluation.reference | reference: 250/1000 done
+
+=== solvers_cli.py --reference started 2026-11-28 09:04:41 ===
+09:04 | equal_evaluation.reference | reference: 1000 instances, 287 committed (resume)
+09:17 | equal_evaluation.reference | reference: 300/1000 done
+10:07 | equal_evaluation.reference | reference: 350/1000 done
+10:57 | equal_evaluation.reference | reference: 400/1000 done
+11:48 | equal_evaluation.reference | reference: 450/1000 done
+12:38 | equal_evaluation.reference | reference: 500/1000 done
+13:28 | equal_evaluation.reference | reference: 550/1000 done
+14:18 | equal_evaluation.reference | reference: 600/1000 done
+15:08 | equal_evaluation.reference | reference: 650/1000 done
+15:58 | equal_evaluation.reference | reference: 700/1000 done
+16:48 | equal_evaluation.reference | reference: 750/1000 done
+17:38 | equal_evaluation.reference | reference: 800/1000 done
+18:29 | equal_evaluation.reference | reference: 850/1000 done
+19:19 | equal_evaluation.reference | reference: 900/1000 done
+20:09 | equal_evaluation.reference | reference: 950/1000 done
+20:59 | equal_evaluation.reference | reference: 1000/1000 done
+20:59 | equal_evaluation.reference | reference: done (1000 committed)

@@ -1,0 +1,5 @@
+13:50 | rl4co.envs.routing.cvrp.generator | The capacity capacity for 501 locations is not defined. Using the closest capacity: 100.0                    with 500 locations.
+13:53 | rl4co.envs.routing.cvrp.generator | The capacity capacity for 501 locations is not defined. Using the closest capacity: 100.0                    with 500 locations.
+14:02 | rl4co.envs.routing.cvrp.generator | The capacity capacity for 501 locations is not defined. Using the closest capacity: 100.0                    with 500 locations.
+14:41 | rl4co.envs.routing.cvrp.generator | The capacity capacity for 501 locations is not defined. Using the closest capacity: 100.0                    with 500 locations.
+14:59 | rl4co.envs.routing.cvrp.generator | The capacity capacity for 501 locations is not defined. Using the closest capacity: 100.0                    with 500 locations.

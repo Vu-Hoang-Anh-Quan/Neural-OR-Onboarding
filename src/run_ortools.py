@@ -2,7 +2,7 @@ import sys, time
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
 from cvrp.cvrp_utils import load, cost, check
 
-path, sec = sys.argv[1], int(sys.argv[2])
+path, sec = sys.argv[1], float(sys.argv[2])
 inst = load(path); D, dem, Q = inst["D"], inst["demand"], inst["Q"]
 n_veh = len(dem) - 1
 mgr = pywrapcp.RoutingIndexManager(len(dem), n_veh, 0)
@@ -14,7 +14,8 @@ rm.AddDimensionWithVehicleCapacity(dem_cb, 0, [Q] * n_veh, True, "Capacity")
 p = pywrapcp.DefaultRoutingSearchParameters()
 p.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
 p.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
-p.time_limit.seconds = sec
+p.time_limit.seconds = int(sec)
+p.time_limit.nanos = int(round(sec - int(sec)) * 1e9)   # sub-second budgets (measured POMO times)
 t = time.perf_counter(); sol = rm.SolveWithParameters(p)
 routes = []
 for v in range(n_veh):

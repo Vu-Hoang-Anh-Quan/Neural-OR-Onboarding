@@ -852,3 +852,1063 @@
 14:23 | __main__ | wrote cvrp50_training_returns.png
 14:23 | __main__ | wrote /home/Quan/Desktop/Neural-OR-Onboarding/results/rl4co_intro/results.md
 14:23 | __main__ | done.
+21:43 | __main__ | run: variants=['am', 'pomo'] problems=['tsp', 'cvrp'] device=cuda seed=42 epochs=1000 max_steps=500 batch=512 data=5000/500/500
+21:43 | __main__ | am_tsp50: removed stale am_tsp50_curve.csv (fresh training)
+21:43 | __main__ | am_tsp50: removed stale am_tsp50_best.pt (fresh training)
+21:43 | rl4co.models.nn.attention | Using default scaled_dot_product_attention for PointerAttention
+21:43 | rl4co.models.rl.common.base | No metrics specified, using default
+21:43 | rl4co.models.rl.common.base | Setting up batch sizes for train/val/test
+21:43 | rl4co.models.rl.common.base | Setting up datasets
+21:43 | rl4co.envs.common.base | val_file not set. Generating dataset instead
+21:43 | rl4co.envs.common.base | test_file not set. Generating dataset instead
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Instantiating optimizer <Adam>
+21:43 | __main__ | epoch  1  train_return -22.7939±3.7579  val_return -18.1992±0.0000  wall 1.0s
+21:43 | __main__ | saved best checkpoint for epoch 1 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -18.172, Baseline mean: -20.743
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Set warmup alpha = 1.0
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  2  train_return -23.1756±1.7953  val_return -17.6141±0.0000  wall 0.9s
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -17.578, Baseline mean: -18.217
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  3  train_return -18.9921±0.5474  val_return -17.2035±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 3 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -17.187, Baseline mean: -17.557
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  4  train_return -18.1591±0.0770  val_return -16.7741±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 4 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -16.862, Baseline mean: -17.182
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  5  train_return -17.8770±0.1286  val_return -16.6264±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 5 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -16.570, Baseline mean: -16.908
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  6  train_return -17.5691±0.0438  val_return -16.3546±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 6 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -16.135, Baseline mean: -16.369
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.001
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  7  train_return -17.3815±0.1142  val_return -15.7606±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 7 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -15.654, Baseline mean: -16.222
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  8  train_return -16.5295±0.4256  val_return -14.0231±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 8 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.816, Baseline mean: -15.505
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch  9  train_return -14.3482±0.9872  val_return -10.6369±0.0000  wall 1.0s
+21:43 | __main__ | saved best checkpoint for epoch 9 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -10.688, Baseline mean: -14.000
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 10  train_return -11.4155±0.6240  val_return -8.9139±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 10 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -8.915, Baseline mean: -10.666
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 11  train_return -9.9347±0.1666  val_return -8.4612±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 11 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -8.476, Baseline mean: -8.865
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 12  train_return -9.4621±0.1825  val_return -8.2817±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 12 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -8.284, Baseline mean: -8.472
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 13  train_return -9.0750±0.0931  val_return -8.1103±0.0000  wall 0.8s
+21:43 | __main__ | saved best checkpoint for epoch 13 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -8.090, Baseline mean: -8.288
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 14  train_return -8.8858±0.0481  val_return -8.2999±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 14 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -8.259, Baseline mean: -8.089
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 15  train_return -8.7526±0.1047  val_return -7.8682±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 15 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.842, Baseline mean: -8.089
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 16  train_return -8.5484±0.1240  val_return -7.7353±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 16 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.749, Baseline mean: -7.895
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 17  train_return -8.4057±0.0741  val_return -7.4854±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 17 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.512, Baseline mean: -7.764
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 18  train_return -8.2607±0.0640  val_return -7.3693±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 18 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.415, Baseline mean: -7.477
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 19  train_return -8.1975±0.0748  val_return -7.3237±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 19 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.314, Baseline mean: -7.376
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.001
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 20  train_return -8.1040±0.0704  val_return -7.2668±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 20 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.227, Baseline mean: -7.260
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.013
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 21  train_return -7.9623±0.0539  val_return -7.2144±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 21 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.240, Baseline mean: -7.307
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 22  train_return -7.8428±0.0384  val_return -7.2274±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 22 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.208, Baseline mean: -7.216
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.341
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 23  train_return -7.7238±0.0360  val_return -7.0637±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 23 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.033, Baseline mean: -7.216
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 24  train_return -7.6431±0.0394  val_return -7.0272±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 24 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.049, Baseline mean: -7.094
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.006
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 25  train_return -7.6893±0.1811  val_return -7.0428±0.0000  wall 0.9s
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.062, Baseline mean: -7.066
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.387
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 26  train_return -7.5835±0.1518  val_return -6.9852±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 26 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -7.018, Baseline mean: -7.066
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.001
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 27  train_return -7.3868±0.0411  val_return -6.9470±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 27 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.928, Baseline mean: -6.982
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:43 | __main__ | epoch 28  train_return -7.3744±0.0411  val_return -6.9287±0.0000  wall 0.9s
+21:43 | __main__ | saved best checkpoint for epoch 28 → am_tsp50_best.pt
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:43 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.889, Baseline mean: -6.926
+21:43 | rl4co.models.rl.reinforce.baselines | p-value: 0.010
+21:43 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:43 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:43 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 29  train_return -7.3535±0.0449  val_return -6.8872±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 29 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.918, Baseline mean: -6.906
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 30  train_return -7.3979±0.1105  val_return -6.8625±0.0000  wall 0.9s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.869, Baseline mean: -6.906
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.015
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 31  train_return -7.2798±0.0577  val_return -6.9420±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 31 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.906, Baseline mean: -6.879
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 32  train_return -7.2897±0.0497  val_return -6.8201±0.0000  wall 0.9s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.814, Baseline mean: -6.879
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 33  train_return -7.2285±0.0128  val_return -6.8347±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 33 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.846, Baseline mean: -6.835
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 34  train_return -7.1800±0.0223  val_return -6.7916±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 34 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.797, Baseline mean: -6.835
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.007
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 35  train_return -7.1996±0.0521  val_return -6.7719±0.0000  wall 0.9s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.794, Baseline mean: -6.821
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.016
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 36  train_return -7.1483±0.0548  val_return -6.7468±0.0000  wall 0.8s
+21:44 | __main__ | saved best checkpoint for epoch 36 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.786, Baseline mean: -6.788
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.425
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 37  train_return -7.1158±0.0365  val_return -6.7795±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 37 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.787, Baseline mean: -6.788
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.456
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 38  train_return -7.0905±0.0491  val_return -6.7259±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 38 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.745, Baseline mean: -6.788
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.003
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 39  train_return -7.0520±0.0213  val_return -6.7194±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 39 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.725, Baseline mean: -6.730
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.342
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 40  train_return -7.0588±0.0619  val_return -6.6752±0.0000  wall 0.8s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.669, Baseline mean: -6.730
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 41  train_return -7.0108±0.0238  val_return -6.6820±0.0000  wall 0.8s
+21:44 | __main__ | saved best checkpoint for epoch 41 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.694, Baseline mean: -6.696
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.436
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 42  train_return -7.1350±0.1044  val_return -6.7034±0.0000  wall 0.8s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.750, Baseline mean: -6.696
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 43  train_return -7.0699±0.0589  val_return -6.7184±0.0000  wall 0.9s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.753, Baseline mean: -6.696
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 44  train_return -6.9906±0.0452  val_return -6.6521±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 44 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.664, Baseline mean: -6.696
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.010
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 45  train_return -6.9561±0.0269  val_return -6.6235±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 45 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.617, Baseline mean: -6.656
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 46  train_return -6.9410±0.0659  val_return -6.6123±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 46 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.616, Baseline mean: -6.629
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.131
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 47  train_return -7.0008±0.0997  val_return -6.5946±0.0000  wall 0.8s
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.616, Baseline mean: -6.629
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.159
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 48  train_return -6.8917±0.0299  val_return -6.5967±0.0000  wall 0.8s
+21:44 | __main__ | saved best checkpoint for epoch 48 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.608, Baseline mean: -6.629
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.021
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 49  train_return -6.8616±0.0273  val_return -6.5706±0.0000  wall 1.0s
+21:44 | __main__ | saved best checkpoint for epoch 49 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.557, Baseline mean: -6.593
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 50  train_return -6.8564±0.0194  val_return -6.5602±0.0000  wall 0.9s
+21:44 | __main__ | saved best checkpoint for epoch 50 → am_tsp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -6.596, Baseline mean: -6.592
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | am_tsp50: fit finished in 76.1 s (1.3 min)
+21:44 | __main__ | am_cvrp50: removed stale am_cvrp50_curve.csv (fresh training)
+21:44 | __main__ | am_cvrp50: removed stale am_cvrp50_best.pt (fresh training)
+21:44 | rl4co.models.nn.attention | Using default scaled_dot_product_attention for PointerAttention
+21:44 | rl4co.models.rl.common.base | No metrics specified, using default
+21:44 | rl4co.models.rl.common.base | Setting up batch sizes for train/val/test
+21:44 | rl4co.models.rl.common.base | Setting up datasets
+21:44 | rl4co.envs.common.base | val_file not set. Generating dataset instead
+21:44 | rl4co.envs.common.base | test_file not set. Generating dataset instead
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Instantiating optimizer <Adam>
+21:44 | __main__ | epoch  1  train_return -30.9142±5.7746  val_return -20.0791±0.0000  wall 1.5s
+21:44 | __main__ | saved best checkpoint for epoch 1 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -19.790, Baseline mean: -21.285
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Set warmup alpha = 1.0
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  2  train_return -29.5291±0.5250  val_return -20.4242±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 2 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -20.320, Baseline mean: -20.148
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  3  train_return -26.2131±1.4225  val_return -21.0727±0.0000  wall 1.3s
+21:44 | __main__ | saved best checkpoint for epoch 3 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -21.040, Baseline mean: -20.148
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  4  train_return -22.7917±0.3887  val_return -21.2156±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 4 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -21.129, Baseline mean: -20.148
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  5  train_return -22.3576±0.1108  val_return -21.0578±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 5 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -20.904, Baseline mean: -20.148
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  6  train_return -22.0534±0.1293  val_return -20.5012±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 6 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -20.294, Baseline mean: -20.148
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  7  train_return -21.3665±0.2296  val_return -19.3421±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 7 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -19.154, Baseline mean: -20.148
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  8  train_return -19.8179±0.8383  val_return -16.7455±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 8 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -16.757, Baseline mean: -19.262
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch  9  train_return -17.5374±0.3069  val_return -16.1306±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 9 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -16.092, Baseline mean: -16.728
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 10  train_return -16.8692±0.2054  val_return -15.2251±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 10 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -15.228, Baseline mean: -16.052
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 11  train_return -16.3664±0.1574  val_return -14.8177±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 11 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.868, Baseline mean: -15.167
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 12  train_return -15.8190±0.1163  val_return -14.6997±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 12 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.667, Baseline mean: -14.773
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.009
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:44 | __main__ | epoch 13  train_return -15.5640±0.1117  val_return -14.5151±0.0000  wall 1.1s
+21:44 | __main__ | saved best checkpoint for epoch 13 → am_cvrp50_best.pt
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:44 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.566, Baseline mean: -14.764
+21:44 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:44 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:44 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:44 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 14  train_return -15.3141±0.1154  val_return -14.4212±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 14 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.531, Baseline mean: -14.648
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.011
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 15  train_return -14.9889±0.0975  val_return -14.2124±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 15 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.208, Baseline mean: -14.323
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.008
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 16  train_return -14.7667±0.1430  val_return -14.1408±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 16 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -14.212, Baseline mean: -14.394
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 17  train_return -14.6209±0.0799  val_return -13.9530±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 17 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.905, Baseline mean: -14.098
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 18  train_return -14.4869±0.0670  val_return -13.8767±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 18 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.856, Baseline mean: -13.923
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.040
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 19  train_return -14.4287±0.0924  val_return -13.8216±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 19 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.657, Baseline mean: -13.673
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.336
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 20  train_return -14.4050±0.0623  val_return -13.7889±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 20 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.621, Baseline mean: -13.673
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.086
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 21  train_return -14.3354±0.1228  val_return -13.7198±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 21 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.545, Baseline mean: -13.673
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.000
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 22  train_return -14.3955±0.1108  val_return -13.7569±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.747, Baseline mean: -13.775
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.204
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 23  train_return -14.4454±0.1785  val_return -13.8250±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.901, Baseline mean: -13.775
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 24  train_return -14.3738±0.1056  val_return -13.6837±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.791, Baseline mean: -13.775
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 25  train_return -14.2523±0.0800  val_return -13.7004±0.0000  wall 1.2s
+21:45 | __main__ | saved best checkpoint for epoch 25 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.792, Baseline mean: -13.775
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 26  train_return -14.1830±0.0824  val_return -13.6477±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 26 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.653, Baseline mean: -13.775
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.001
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 27  train_return -14.1245±0.0813  val_return -13.6146±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 27 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.581, Baseline mean: -13.609
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.246
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 28  train_return -14.1701±0.0922  val_return -13.6071±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.605, Baseline mean: -13.609
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.454
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 29  train_return -14.2580±0.1228  val_return -13.4709±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.584, Baseline mean: -13.609
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.242
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 30  train_return -14.0725±0.0542  val_return -13.5662±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 30 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.552, Baseline mean: -13.609
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.072
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 31  train_return -14.1506±0.0816  val_return -13.5413±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.504, Baseline mean: -13.609
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.003
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 32  train_return -14.0886±0.0605  val_return -13.5684±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.515, Baseline mean: -13.543
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.232
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 33  train_return -14.0493±0.0819  val_return -13.4883±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 33 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.512, Baseline mean: -13.543
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.199
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 34  train_return -14.1087±0.1197  val_return -13.5281±0.0000  wall 1.3s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.534, Baseline mean: -13.543
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.406
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 35  train_return -14.1110±0.0689  val_return -13.4999±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.570, Baseline mean: -13.543
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 36  train_return -13.9704±0.0410  val_return -13.3922±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 36 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.448, Baseline mean: -13.543
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.008
+21:45 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 37  train_return -14.1082±0.1080  val_return -13.4706±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.452, Baseline mean: -13.407
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 38  train_return -13.9690±0.1041  val_return -13.4291±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 38 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.466, Baseline mean: -13.407
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 39  train_return -13.9285±0.0577  val_return -13.3934±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 39 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.376, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.213
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 40  train_return -13.9285±0.0850  val_return -13.4019±0.0000  wall 1.1s
+21:45 | __main__ | saved best checkpoint for epoch 40 → am_cvrp50_best.pt
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.366, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.133
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 41  train_return -14.0483±0.0930  val_return -13.3879±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.390, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.310
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 42  train_return -13.9879±0.0771  val_return -13.4592±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.367, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.153
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 43  train_return -13.9666±0.1039  val_return -13.3838±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.358, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.093
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 44  train_return -13.9423±0.1205  val_return -13.3773±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.366, Baseline mean: -13.407
+21:45 | rl4co.models.rl.reinforce.baselines | p-value: 0.152
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:45 | __main__ | epoch 45  train_return -13.9443±0.0899  val_return -13.4784±0.0000  wall 1.1s
+21:45 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:45 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.471, Baseline mean: -13.407
+21:45 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 46  train_return -13.9949±0.1045  val_return -13.6141±0.0000  wall 1.1s
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:46 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.650, Baseline mean: -13.407
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 47  train_return -14.0268±0.1414  val_return -13.5078±0.0000  wall 1.1s
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:46 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.421, Baseline mean: -13.407
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 48  train_return -13.8937±0.1586  val_return -13.3607±0.0000  wall 1.1s
+21:46 | __main__ | saved best checkpoint for epoch 48 → am_cvrp50_best.pt
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:46 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.344, Baseline mean: -13.407
+21:46 | rl4co.models.rl.reinforce.baselines | p-value: 0.044
+21:46 | rl4co.models.rl.reinforce.baselines | Updating baseline
+21:46 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 49  train_return -13.9003±0.0697  val_return -13.3063±0.0000  wall 1.1s
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:46 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.373, Baseline mean: -13.378
+21:46 | rl4co.models.rl.reinforce.baselines | p-value: 0.452
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 50  train_return -13.7671±0.0890  val_return -13.2770±0.0000  wall 1.1s
+21:46 | __main__ | saved best checkpoint for epoch 50 → am_cvrp50_best.pt
+21:46 | rl4co.models.rl.reinforce.baselines | Evaluating candidate policy on evaluation dataset
+21:46 | rl4co.models.rl.reinforce.baselines | Candidate mean: -13.335, Baseline mean: -13.378
+21:46 | rl4co.models.rl.reinforce.baselines | p-value: 0.112
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | am_cvrp50: fit finished in 97.2 s (1.6 min)
+21:46 | __main__ | pomo_tsp50: removed stale pomo_tsp50_curve.csv (fresh training)
+21:46 | __main__ | pomo_tsp50: removed stale pomo_tsp50_best.pt (fresh training)
+21:46 | rl4co.models.nn.attention | Using default scaled_dot_product_attention for PointerAttention
+21:46 | rl4co.models.rl.common.base | No metrics specified, using default
+21:46 | rl4co.data.transforms | Features not passed, defaulting to 'locs'
+21:46 | rl4co.models.rl.common.base | Setting up batch sizes for train/val/test
+21:46 | rl4co.models.rl.common.base | Setting up datasets
+21:46 | rl4co.envs.common.base | val_file not set. Generating dataset instead
+21:46 | rl4co.envs.common.base | test_file not set. Generating dataset instead
+21:46 | rl4co.models.rl.common.base | Instantiating optimizer <Adam>
+21:46 | __main__ | epoch  1  train_return -18.6726±4.5218  val_return -8.5354±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 1 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  2  train_return -10.7158±0.3827  val_return -8.1432±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 2 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  3  train_return -10.0760±0.1528  val_return -7.9023±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 3 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  4  train_return -9.3510±0.2239  val_return -7.5446±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 4 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  5  train_return -8.6944±0.1452  val_return -7.3407±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 5 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  6  train_return -8.2720±0.0891  val_return -7.2012±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 6 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  7  train_return -8.0132±0.0614  val_return -7.1510±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 7 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  8  train_return -7.8397±0.0451  val_return -7.0855±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 8 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch  9  train_return -7.6848±0.0483  val_return -7.0433±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 9 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 10  train_return -7.5864±0.0313  val_return -7.0210±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 10 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 11  train_return -7.5150±0.0259  val_return -6.9878±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 11 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 12  train_return -7.4597±0.0247  val_return -6.9680±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 12 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 13  train_return -7.4087±0.0178  val_return -6.9597±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 13 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 14  train_return -7.3772±0.0225  val_return -6.9408±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 14 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 15  train_return -7.3508±0.0185  val_return -6.9291±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 15 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 16  train_return -7.3262±0.0127  val_return -6.9098±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 16 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 17  train_return -7.2869±0.0123  val_return -6.9000±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 17 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 18  train_return -7.2650±0.0212  val_return -6.8881±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 18 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 19  train_return -7.2513±0.0115  val_return -6.8744±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 19 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 20  train_return -7.2181±0.0077  val_return -6.8702±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 20 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 21  train_return -7.2049±0.0134  val_return -6.8627±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 21 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 22  train_return -7.1958±0.0136  val_return -6.8351±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 22 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 23  train_return -7.1716±0.0176  val_return -6.8283±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 23 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:46 | __main__ | epoch 24  train_return -7.1520±0.0280  val_return -6.8147±0.0000  wall 2.0s
+21:46 | __main__ | saved best checkpoint for epoch 24 → pomo_tsp50_best.pt
+21:46 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 25  train_return -7.1369±0.0168  val_return -6.8095±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 25 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 26  train_return -7.1215±0.0096  val_return -6.7982±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 26 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 27  train_return -7.1019±0.0110  val_return -6.7829±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 27 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 28  train_return -7.0822±0.0096  val_return -6.7719±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 28 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 29  train_return -7.0647±0.0150  val_return -6.7663±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 29 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 30  train_return -7.0541±0.0134  val_return -6.7562±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 30 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 31  train_return -7.0358±0.0184  val_return -6.7450±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 31 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 32  train_return -7.0247±0.0118  val_return -6.7417±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 32 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 33  train_return -7.0145±0.0188  val_return -6.7472±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 33 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 34  train_return -7.0147±0.0172  val_return -6.7301±0.0000  wall 2.0s
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 35  train_return -6.9975±0.0173  val_return -6.7234±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 35 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 36  train_return -6.9859±0.0193  val_return -6.7085±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 36 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 37  train_return -6.9792±0.0183  val_return -6.7156±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 37 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 38  train_return -6.9624±0.0166  val_return -6.7027±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 38 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 39  train_return -6.9515±0.0165  val_return -6.6997±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 39 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 40  train_return -6.9335±0.0086  val_return -6.6895±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 40 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 41  train_return -6.9285±0.0152  val_return -6.6834±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 41 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 42  train_return -6.9231±0.0156  val_return -6.6804±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 42 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 43  train_return -6.9088±0.0144  val_return -6.6799±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 43 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 44  train_return -6.9008±0.0099  val_return -6.6615±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 44 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 45  train_return -6.8983±0.0146  val_return -6.6504±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 45 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 46  train_return -6.8959±0.0161  val_return -6.6469±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 46 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 47  train_return -6.8633±0.0121  val_return -6.6413±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 47 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 48  train_return -6.8550±0.0136  val_return -6.6369±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 48 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 49  train_return -6.8534±0.0084  val_return -6.6367±0.0000  wall 2.0s
+21:47 | __main__ | saved best checkpoint for epoch 49 → pomo_tsp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch 50  train_return -6.8561±0.0206  val_return -6.6244±0.0000  wall 2.0s
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | pomo_tsp50: fit finished in 101.5 s (1.7 min)
+21:47 | __main__ | pomo_cvrp50: removed stale pomo_cvrp50_curve.csv (fresh training)
+21:47 | __main__ | pomo_cvrp50: removed stale pomo_cvrp50_best.pt (fresh training)
+21:47 | rl4co.models.nn.attention | Using default scaled_dot_product_attention for PointerAttention
+21:47 | rl4co.models.rl.common.base | No metrics specified, using default
+21:47 | rl4co.data.transforms | Features not passed, defaulting to 'locs'
+21:47 | rl4co.models.rl.common.base | Setting up batch sizes for train/val/test
+21:47 | rl4co.models.rl.common.base | Setting up datasets
+21:47 | rl4co.envs.common.base | val_file not set. Generating dataset instead
+21:47 | rl4co.envs.common.base | test_file not set. Generating dataset instead
+21:47 | rl4co.models.rl.common.base | Instantiating optimizer <Adam>
+21:47 | __main__ | epoch  1  train_return -23.6120±5.8684  val_return -14.2862±0.0000  wall 2.6s
+21:47 | __main__ | saved best checkpoint for epoch 1 → pomo_cvrp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch  2  train_return -15.7995±0.3448  val_return -13.8110±0.0000  wall 2.6s
+21:47 | __main__ | saved best checkpoint for epoch 2 → pomo_cvrp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:47 | __main__ | epoch  3  train_return -14.9942±0.1217  val_return -13.4377±0.0000  wall 2.7s
+21:47 | __main__ | saved best checkpoint for epoch 3 → pomo_cvrp50_best.pt
+21:47 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  4  train_return -14.5381±0.1245  val_return -13.1472±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 4 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  5  train_return -14.2699±0.0904  val_return -13.0260±0.0000  wall 2.7s
+21:48 | __main__ | saved best checkpoint for epoch 5 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  6  train_return -14.1419±0.0941  val_return -12.9898±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 6 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  7  train_return -13.9583±0.0877  val_return -12.8607±0.0000  wall 2.7s
+21:48 | __main__ | saved best checkpoint for epoch 7 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  8  train_return -13.8611±0.0665  val_return -12.7908±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 8 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch  9  train_return -13.6634±0.0915  val_return -12.7076±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 9 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 10  train_return -13.5606±0.0656  val_return -12.6480±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 10 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 11  train_return -13.4963±0.0540  val_return -12.6309±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 11 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 12  train_return -13.3801±0.0722  val_return -12.5742±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 12 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 13  train_return -13.3200±0.0713  val_return -12.5032±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 13 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 14  train_return -13.2949±0.0667  val_return -12.4749±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 14 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 15  train_return -13.2406±0.0766  val_return -12.4505±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 15 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 16  train_return -13.1318±0.0891  val_return -12.4108±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 16 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 17  train_return -13.1465±0.0375  val_return -12.4034±0.0000  wall 2.6s
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 18  train_return -13.0658±0.0533  val_return -12.3664±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 18 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 19  train_return -13.0223±0.0524  val_return -12.3197±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 19 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 20  train_return -12.9702±0.0618  val_return -12.3109±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 20 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 21  train_return -12.9410±0.0817  val_return -12.2793±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 21 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 22  train_return -12.9070±0.0542  val_return -12.2790±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 22 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 23  train_return -12.9032±0.0701  val_return -12.2189±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 23 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 24  train_return -12.8592±0.0728  val_return -12.2122±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 24 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:48 | __main__ | epoch 25  train_return -12.8583±0.0797  val_return -12.1950±0.0000  wall 2.6s
+21:48 | __main__ | saved best checkpoint for epoch 25 → pomo_cvrp50_best.pt
+21:48 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 26  train_return -12.8060±0.0411  val_return -12.1948±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 26 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 27  train_return -12.7724±0.0562  val_return -12.1707±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 27 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 28  train_return -12.7622±0.0394  val_return -12.1522±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 28 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 29  train_return -12.7538±0.0537  val_return -12.1247±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 29 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 30  train_return -12.7262±0.0642  val_return -12.1101±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 30 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 31  train_return -12.7209±0.0452  val_return -12.0939±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 31 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 32  train_return -12.6759±0.0423  val_return -12.0738±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 32 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 33  train_return -12.6867±0.0581  val_return -12.0741±0.0000  wall 2.6s
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 34  train_return -12.6205±0.0533  val_return -12.0459±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 34 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 35  train_return -12.6429±0.0462  val_return -12.0439±0.0000  wall 2.6s
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 36  train_return -12.5988±0.0451  val_return -12.0354±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 36 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 37  train_return -12.5686±0.0657  val_return -12.0142±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 37 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 38  train_return -12.5471±0.0400  val_return -12.0111±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 38 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 39  train_return -12.5279±0.0289  val_return -11.9866±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 39 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 40  train_return -12.5705±0.0413  val_return -11.9752±0.0000  wall 2.6s
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 41  train_return -12.5029±0.0645  val_return -11.9654±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 41 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 42  train_return -12.4992±0.0551  val_return -11.9711±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 42 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 43  train_return -12.4957±0.0402  val_return -11.9388±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 43 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 44  train_return -12.4388±0.0750  val_return -11.9409±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 44 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 45  train_return -12.4717±0.0663  val_return -11.9393±0.0000  wall 2.6s
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 46  train_return -12.4387±0.0506  val_return -11.9246±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 46 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 47  train_return -12.4520±0.0639  val_return -11.9189±0.0000  wall 2.5s
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:49 | __main__ | epoch 48  train_return -12.4215±0.0618  val_return -11.9127±0.0000  wall 2.6s
+21:49 | __main__ | saved best checkpoint for epoch 48 → pomo_cvrp50_best.pt
+21:49 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:50 | __main__ | epoch 49  train_return -12.4094±0.0426  val_return -11.8980±0.0000  wall 2.6s
+21:50 | __main__ | saved best checkpoint for epoch 49 → pomo_cvrp50_best.pt
+21:50 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:50 | __main__ | epoch 50  train_return -12.3699±0.0657  val_return -11.8960±0.0000  wall 2.6s
+21:50 | __main__ | saved best checkpoint for epoch 50 → pomo_cvrp50_best.pt
+21:50 | rl4co.models.rl.common.base | Generating training dataset for next epoch...
+21:50 | __main__ | pomo_cvrp50: fit finished in 132.9 s (2.2 min)
+21:50 | rl4co.models.nn.attention | Using default scaled_dot_product_attention for PointerAttention
+21:50 | rl4co.models.rl.common.base | No metrics specified, using default
+21:50 | rl4co.models.rl.common.base | Setting up batch sizes for train/val/test
+21:50 | rl4co.models.rl.common.base | Setting up datasets
+21:50 | rl4co.envs.common.base | val_file not set. Generating dataset instead
+21:50 | rl4co.envs.common.base | test_file not set. Generating dataset instead
+21:50 | rl4co.models.rl.reinforce.baselines | Creating evaluation dataset for rollout baseline
+21:50 | rl4co.models.rl.reinforce.baselines | Evaluating baseline policy on evaluation dataset
